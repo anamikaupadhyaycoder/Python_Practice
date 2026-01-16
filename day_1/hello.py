@@ -1,5 +1,8 @@
 name = input("enter your name: ")
-print("Welcome", name)
+age = int(input("enter age: "))
+marks = input("enter marks: ")
 
-val = input("enter some value: ")
-print(type(val), val)
+print("Welcome", name)
+print("age = ", age)
+print("marks = ", marks)
+print(type(age), age)
