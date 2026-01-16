@@ -1,6 +1,4 @@
-first = int(input("first number: "))
-second = int(input("second number: "))
+a = float(input("first number: "))
+b = float(input("second number: "))
 
-
-print("sum = ", first + second)
-
+print("average: ", (a+b)/2)
