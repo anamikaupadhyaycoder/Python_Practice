@@ -1,4 +1,4 @@
-a = float(input("first number: "))
-b = float(input("second number: "))
+a = int(input("first number: "))
+b = int(input("second number: "))
 
-print("average: ", (a+b)/2)
+print(a >= b)
