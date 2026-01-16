@@ -1,5 +1,5 @@
-name = input("enter your name: ")
-print("Welcome", name) 
-
-
-
+print("Hello world")
+print(3+4)
+print(9+5)
+print("anshika rawat")
+print("pinki")
