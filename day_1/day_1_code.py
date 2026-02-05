@@ -1,21 +1,21 @@
-# print(3+4)
-# print(2+1)
-# print("Hello World")
-# print("Anamika Upadhyay")
-# print("Anamika is my name.", "My age is 17")
-# print(12*2)
-# name = "Anamika"
-# age = 17
-# price = 12
+a = int(input("weight: ")) #Q3
+if a > 25: 
+  print("warning: luggage exceeds the allowed limit of 25 kg.")
 
-# age2 = age
+pi = float(input("pi: "))
+r = float(input("radius: "))
+Volume = (4/3) * pi * r**3
+print("volume of the sphere =", Volume)
 
-# print("my name is : ", name)
-# print("my age is :", age)
-# print(age2)   
-
-
-
-str1 = "this is a string."
-str2 = 'apnacollege'
-str3 = """this is a string."""
+a = float(input("marks: "))
+if a >= 80:
+    print("Excellent")
+b = float(input("marks: "))    
+if b >= 65 <80:
+  print("Good")
+c = float(input("marks: ")) 
+if c >= 50 <65:
+   print("Pass")
+d = float(input("marks: "))   
+if d < 50:
+   print("Fail")
