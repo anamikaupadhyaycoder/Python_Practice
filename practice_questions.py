@@ -1,6 +1,9 @@
-a = int(input("first number: "))
-b = int(input("second number: "))
+#WAP to input user's first name & print its length
 
-print(a >= b)
+a = input("enter your name : ")
+print("length of your name is", len(a))
 
-print("Anshika")
+#WAP to find the occurrence of '$' in a string.
+
+name = "this is a $ symbol of dollar and $ its used in usa most"
+print(name.count("$"))
