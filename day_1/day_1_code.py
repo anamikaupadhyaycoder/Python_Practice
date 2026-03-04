@@ -1,13 +1,13 @@
-a = int(input("weight: ")) #Q3
+a = int(input("weight: ")) #Q2
 if a > 25: 
   print("warning: luggage exceeds the allowed limit of 25 kg.")
 
-pi = float(input("pi: "))
+pi = float(input("pi: ")) #Q1
 r = float(input("radius: "))
 Volume = (4/3) * pi * r**3
 print("volume of the sphere =", Volume)
 
-a = float(input("marks: "))
+a = float(input("marks: ")) #Q3
 if a >= 80:
     print("Excellent")
 b = float(input("marks: "))    
