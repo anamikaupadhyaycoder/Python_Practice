@@ -1,6 +1,4 @@
-A = int(input("weight of luggaage : "))
-if(A > 25): 
-    print("warning, luggage over exceed")
+#conditional statements
 
 light = "green"
 if(light == "red"):
@@ -10,8 +8,20 @@ elif(light == "green"):
 elif(light == "yellow"):
     print("wait")
 
-n = 6
-if(n > 4): 
-    print("greater than 4")
-elif(n > 5):
-    print("greater than 5")
+
+age = 24
+
+if(age > 18):
+    print("can vote") #indentation
+else:
+    print("cannot vote")
+
+age = 41
+if(age >= 18):
+    if(age >= 40):
+        print("cannot drive")
+    else: 
+            print("can drive")
+else:
+    print("cannot drive")           
+    
