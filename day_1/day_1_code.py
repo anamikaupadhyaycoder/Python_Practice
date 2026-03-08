@@ -1,21 +1,15 @@
-a = int(input("weight: ")) #Q2
-if a > 25: 
-  print("warning: luggage exceeds the allowed limit of 25 kg.")
+lists = [3, 5, 6, 3, 2, 6, 5, 9]
+lists.append(7)
+print(lists)
+lists.sort(reverse = True)
+print(lists)
 
-pi = float(input("pi: ")) #Q1
-r = float(input("radius: "))
-Volume = (4/3) * pi * r**3
-print("volume of the sphere =", Volume)
+#we can also perform this functions within string.
 
-a = float(input("marks: ")) #Q3
-if a >= 80:
-    print("Excellent")
-b = float(input("marks: "))    
-if b >= 65 <80:
-  print("Good")
-c = float(input("marks: ")) 
-if c >= 50 <65:
-   print("Pass")
-d = float(input("marks: "))   
-if d < 50:
-   print("Fail")
+list = ["a", "b", "d", "w"]
+list.append("g")
+
+ 
+print(list)
+list.insert(2, "s")
+print(list)
