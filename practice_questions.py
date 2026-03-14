@@ -43,9 +43,41 @@
 
 #WAP to check if a number is a multiple of 7 or not.
 
-num = int(input("enter the number : "))
-if(num % 7 == 0):
-    print("multiple of 7 is true")
-else:
-    print("multiple of 7 is false")   
-    
+# num = int(input("enter the number : "))
+# if(num % 7 == 0):
+#     print("multiple of 7 is true")
+# else:
+#     print("multiple of 7 is false")   
+
+
+#WAP to ask the user to enter names of their 3 favorite movies & store them in a list.
+
+# a = input("enter first movie name: ")
+# b = input("enter second movie name: ")
+# c = input("enter third movie name: ")
+ 
+# list = [a, b, c]
+# print(list)
+
+#WAP to check if  list contains a palindrome of elements. 
+
+# list1 = [1, 2, 1]
+# list2 = [2,3,4]
+
+# copy_list1 = list1.copy()
+# copy_list1.reverse() 
+
+# if(copy_list1 == list1):
+#     print("palindrome")
+# else:
+#     print("non palindrome")
+
+#WAP to count the number of students with the "A" grade in the following tuple.
+
+tup = ["A", "B", "A", "C", "B","C", "A", "D", "C"]
+a = tup.sort()
+print(tup)
+
+
+
+
