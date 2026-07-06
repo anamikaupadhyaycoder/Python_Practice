@@ -1,14 +1,8 @@
-# question
-new_dict = {
-    1 : 1**3,
-    2 : 2**3,
-    3 : 3**3,
-    4 : 4**3,
-    5 : 5**3
+# Assignment question
+python_dict = {
+    "table" : ["a piece of furniture", "list of facts & figures"],
+    "cat" : "a small animal"
 }
-print(new_dict)
-
-
-
+print(python_dict)
 
 
