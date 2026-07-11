@@ -1,28 +1,25 @@
-# smart temperature converter 
-''' take input in celsius and print its equivalent in fahrenheit and kelvin.
-(use explicit type conversion and arithmetic operators.)
- fahreneheit = (c x 9/5) + 32
- kelvin = c + 273.15'''
+# WAP to find the sum of first n numbers. (using while)
 
-cel = int(input("enter the value of celsius :"))
-fah = (cel * 9/5) + 32
-kel = cel + 273.15
+'''n = 5
 
-print("equivalent in fahrenheit :", fah)
-print("equivalent in kelvin :", kel)
+sum = 0
+for i in range(1, n+1):# range(1, n+1(6)) it means range starts from 1 and ends just before 6 
+    sum+=i
 
-# write a program that takes total bill amount and number of friends as input. 
-# calculate how much each person will pay
-# Also print the data type of each variable used.
+print("total number of sum:", sum)'''
 
-fri = float(input("enter no of friends: "))
-to_amo = float(input("enter total amount: "))
 
-each = to_amo/fri
-print("each person will pay: ", each)
-print(type(fri))
-print(type(to_amo))
-print(type(each))
+#WAP to find the factorial fo first n numbers. (using for)
+
+n = 5
+
+factorial = 1
+for i in range(1, n+1):
+    factorial*=i
+    # factorial*i
+    print("factorial:", factorial)
+
+
 
 
 
