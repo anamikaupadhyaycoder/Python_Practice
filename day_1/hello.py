@@ -9,7 +9,7 @@
 
 
 
-''' a = "Pythonprogramming"
+a = "Pythonprogramming"
 b = "Datascience"
 c = [5, 10, 15, 20, 25]
 d = (2, 4, 6, 8, 10)
@@ -33,10 +33,10 @@ u = str(s[1]) + str(t[2])
 final = x + y + p + r + u + str(q)
 
 print(x, y, z, m, n, p, q, r, s, t, u)
-print(final) '''
+print(final) 
 
-a = "Advancedpython"
-b = "DataScienceAI"
+'''a = "Advancedpython"
+b = "DataScienceIA"
 c = [3, 6, 9, 12, 15, 18]
 d = (5,10, 15, 20, 25)
 
@@ -58,4 +58,4 @@ u = str(int(t)) + str(s)
 
 final = x + q + p + str(r) + u 
 
-print(x)
+print(x)'''
