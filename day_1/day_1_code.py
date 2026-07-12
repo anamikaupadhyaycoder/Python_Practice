@@ -1,4 +1,4 @@
-name = {
+'''name = {
     "key" : "Value",
     "names" : {
         "name1" : "Aayushi",
@@ -16,7 +16,10 @@ print(name["age"])#error
 print(name.get("age1"))#None
 
 name.update({"city" : "Delhi"})
-print(name)
+print(name)'''
+
+collection = {1, 2.4,"anamika", True }
+print(collection)
 
 
 
