@@ -1,70 +1,41 @@
-# WAP to find the sum of first n numbers. (using while)
 
-'''n = 5
+#WAF to print the length of a list. (list is the parameter)
 
-sum = 0
-for i in range(1, n+1):# range(1, n+1(6)) it means range starts from 1 and ends just before 6 
-    sum+=i
+numbers = [1, 4, 3, 6, 8, 4, 9]
+names = ["anamika", "aayushi", "isha", "riva", "shreya"]
 
-print("total number of sum:", sum)'''
+def print_len(list):
+    print(len(list))
 
+print_len(numbers)
+print_len(names)
 
-#WAP to find the factorial fo first n numbers. (using for)
+#WAF to print the elements of a list in a single line.(list is the parameter)
 
-n = 5
+list1 = ["anamika", "aayushi", "isha", "riva", "shreya"]
+ 
+def print_ele(list1):
+    print(list1[0:])
 
-factorial = 1
-'''for i in range(1, n+1):
-    factorial*=i
-    # factorial*i
-    print("factorial:", factorial)'''
-
-
-'''n = 8
-
-fact = 1
-for i in range(1, n+1):
-    fact *= i
-    print("factorial:", fact)'''
+print_ele(list1)
 
 
+#WAF to find the factorial of n. (n is the parameter)
+
+def find_fac(n):
+    fact = 1
+    for i in range(1, n+1):
+        fact *= i 
+    print(fact)
+
+find_fac(5)
 
 
+#WAF to convert USD to INR
+
+def conv(usd_val):
+    inr_val = usd_val*83
+    print(usd_val, "USD=", inr_val, "INR")
 
 
-
-
-
-
-# Assignment - Write a program that takes a sentence and prints:
-# total characters
-# uppercase version
-# lowercase version
-
-pr = input("enter a sentence:")
-print(len(pr))
-pr_1 = pr.upper()
-pr_2 = pr.lower()
-
-print(pr_1)
-print(pr_2)
-
-
-#Assignment - write a phython program that takes any wotd or sentence as input and prints:
-#The first character 
-#The last character
-#The toatal number of characters
-
-pro = input("enter a sentence")
-print(pro[0])
-print(pro[-1])
-print(len(pro))
-
-
-
-
-
-
-
-
-
+conv(3)
