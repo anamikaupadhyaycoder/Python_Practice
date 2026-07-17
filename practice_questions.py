@@ -1,62 +1,79 @@
-#1 Write a program to print "Let's learn Python!" to the console.
-print("Lets's learn Pyhton!")
-#2 Create an integer variable age = 20 and print it.
-x = 20 
-print(x)
-#3 Create a float variable price = 99.99 and print it.
-price = 99.99
-print(price)
-#4 Create a string variable language = "Python" and print it.
-language = "Python"
-print(language)
-#5 Create a boolean variable is_fun = True and print its value.
-is_fun = True
-print(is_fun)
-#6 Swap the values of two variables x = 5 and y = 10 using a temporary third variable.
-x = 5
-y = 10
+# User Input & Conversions(Q16-30)
+#1. Take a user's name as input and print a welcome message.
+name = input("enter name:")
+print("Welcome")
 
-print(f"Before swap: x = {x} , y = {y}")
-temp = x
-x = y
-y = temp
-print(f"After swap: x = {x} ,y = {y}")
-#7 Perform a Pythonic swap on x and y in a single line without a third variable.
-x = 5 
-y = 10
- 
-print(f"before swap: x = {x}, y = {y}")
+#2. Take a number as input from the user, convert it to an integer, and print its square.
+num = int(input('enter a number:'))
+print(num**2)
 
-x,y = y,x
-print(f"after swap: x = {x}, y = {y}")
-#8 Use type() to print the data type of an integer, a float, a string, and a boolean.
-x = "string"
-y = 10 
-z = True
-w = 99.9
-print(type(x))
-print(type(y))
-print(type(z))
-print(type(w))
-#9 Try to assign a value to a variable starting with a number (e.g., 1variable = 10) and observe the syntax error.
-1variable = 10
-print(1variable)
-#10 Store three different values in three variables a, b, and c in a single line.
-a, b, c = "Mango", "banana", "litchi"
-print(a,b)
-#11 Assign the same value 100 to variables x, y, and z simultaneously.
-x = y = z = 100
-print(z)
-#12 Store your name in a variable and write a Python comment explaining what the variable stores.
-name = "aayushi" # it is a name variable that stores the value as a name. I can store multiple names
-#13 Print "Python" and "Rocks" in the same line separated by a hyphen (Python-Rocks) using a print parameter.
-print("Pyhton", end="- ")
-print("Rocks")
-#14 Print three words on the same line with a space between them using a single print() statement.
-print("Anamika", "Shreya", "Aayusi")
-# Define a constant-like variable for gravity ($9.8$) using uppercase naming conventions.
-GRAVITY = 10.0
-print(GRAVITY)
+#3. Ask the user for a float number, convert it to an integer, and print the result.
+num_1 = float(input("enter a number:"))
+num_2 = int(num_1)
+print(type(num_2))
+
+#4. Take an integer input and convert it to a float.
+i = int(input("anamika"))
+i_i = float(i)
+print(type(i_i))
+
+#5. Convert the boolean True to an integer and print the resulting value.
+con = True
+con1 = int(con)
+print(type(con1))
+
+#6. Convert the integer 0 to a boolean and print the resulting value.
+num = 0 
+num1 = bool(num)
+print(type(num1))
+print(num1)
+
+#7. Take two string inputs from the user, concatenate them with a space, and print the result.
+st = input("Enter a word:")
+st_1 = input("Enter a word:")
+st2 = st + " " + st_1
+print(st2)
+
+#8. Read two integers from the user, add them together, and print the sum.
+num1 = int(input('enter a number:'))
+num2 = int(input('enter a number:'))
+sum = num1 + num2
+print(sum)
+
+#9. Ask the user for their birth year and calculate their age dynamically.
+person = int(input('enter your birth year:'))
+age = 2026 - person 
+print(age)
+
+#10. Ask a user for a float value representing a price and print "The price is: [price]".
+pri = float(input('enter price of the commodity:'))
+print(f"The price is: {pri}")
+
+#11. Take a single-character input from a user and check its type.
+inp = input("enter a single-character:")
+print(type(inp))
+
+#12. Convert the string "250" to an integer and add 50 to it.
+inp1 = "250"
+integer_inp1 = int(inp1)
+print(type(integer_inp1))
+sum = integer_inp1 + 50
+print(sum)
+
+#13. Attempt to convert "hello" to an integer inside a try-except block to see how Python handles conversion errors.
+num = int("hello")
+print(type(num))
+
+#14. Take a user's weight in kilograms (as float) and print it.
+weight = float(input("enter weight in kilograms:"))
+print(weight)
+print(type(weight))
+
+#15. Read a boolean input from a user by evaluating input() == "True".
+user_input = input("enter True or False:")
+is_active = user_input == True
+print(f'th boolena value is: {is_active}')
+print(type(is_active))
 
 
 
