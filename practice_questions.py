@@ -1,79 +1,82 @@
-# User Input & Conversions(Q16-30)
-#1. Take a user's name as input and print a welcome message.
-name = input("enter name:")
-print("Welcome")
-
-#2. Take a number as input from the user, convert it to an integer, and print its square.
-num = int(input('enter a number:'))
-print(num**2)
-
-#3. Ask the user for a float number, convert it to an integer, and print the result.
-num_1 = float(input("enter a number:"))
-num_2 = int(num_1)
-print(type(num_2))
-
-#4. Take an integer input and convert it to a float.
-i = int(input("anamika"))
-i_i = float(i)
-print(type(i_i))
-
-#5. Convert the boolean True to an integer and print the resulting value.
-con = True
-con1 = int(con)
-print(type(con1))
-
-#6. Convert the integer 0 to a boolean and print the resulting value.
-num = 0 
-num1 = bool(num)
-print(type(num1))
-print(num1)
-
-#7. Take two string inputs from the user, concatenate them with a space, and print the result.
-st = input("Enter a word:")
-st_1 = input("Enter a word:")
-st2 = st + " " + st_1
-print(st2)
-
-#8. Read two integers from the user, add them together, and print the sum.
-num1 = int(input('enter a number:'))
-num2 = int(input('enter a number:'))
-sum = num1 + num2
+# Basic Arithmetic & Operations(Q31-50)
+#1. Add,subtract,multiply,and divide two numbrs enterd by the user.
+num1 = int(input("Enter a number:"))
+num2 = int(input("Enter a number:"))
+sum = num1+num2
+subtract = num1-num2
+multiply = num1*num2
+divide = num1/num2
 print(sum)
+print(subtract)
+print(multiply)
+print(divide)
 
-#9. Ask the user for their birth year and calculate their age dynamically.
-person = int(input('enter your birth year:'))
-age = 2026 - person 
-print(age)
+#2. Find the remainder when $27$ is divided by $4$ using the modulo operator %.
+remainder = 27%4
+print(remainder)
 
-#10. Ask a user for a float value representing a price and print "The price is: [price]".
-pri = float(input('enter price of the commodity:'))
-print(f"The price is: {pri}")
+#3. Calculate $3$ raised to the power of $4$ ($3^4$) using the exponentiation operator **.
+power = 3**4
+print(power)
 
-#11. Take a single-character input from a user and check its type.
-inp = input("enter a single-character:")
-print(type(inp))
+#4. Find the floor division quotient when $19$ is divided by $5$ using //.
+floor_division = 19//4
+print(floor_division)
 
-#12. Convert the string "250" to an integer and add 50 to it.
-inp1 = "250"
-integer_inp1 = int(inp1)
-print(type(integer_inp1))
-sum = integer_inp1 + 50
-print(sum)
+#5. Write a program to calculate the area of a rectangle ($length \times width$).
+length = int(input("enter length:"))
+breadth = int(input("enter breadth:"))
+area = length*breadth
+print(f"area of rectangle: {area}")
 
-#13. Attempt to convert "hello" to an integer inside a try-except block to see how Python handles conversion errors.
-num = int("hello")
-print(type(num))
+#6. Calculate the area of a circle using radius input ($Area = \pi r^2$, use $3.14159$).
+radius = int(input("enter radius of circle:"))
+pie = 3.14
+area_of_circle = (radius**2)*pie
+print(f"area of circle: {area_of_circle}")
 
-#14. Take a user's weight in kilograms (as float) and print it.
-weight = float(input("enter weight in kilograms:"))
-print(weight)
-print(type(weight))
+#7. Convert a temperature from Fahrenheit to Celsius ($C = \frac{F - 32}{1.8}$).
+Fahrenheit = int(input("enter value of fahrenheit:"))
+conv = (Fahrenheit - 32)/1.8
+print(conv)
 
-#15. Read a boolean input from a user by evaluating input() == "True".
-user_input = input("enter True or False:")
-is_active = user_input == True
-print(f'th boolena value is: {is_active}')
-print(type(is_active))
+#8. Convert a given number of minutes into hours and remaining minutes.
+min = int(input("enter a minute:"))
+hou = min/60 
+print(hou)
+
+#9. Calculate Simple Interest: $SI = \frac{P \times R \times T}{100}$
+principle = int(input("enter the principle value:"))
+rate = int(input("enter the rate:"))
+time = int(input("enter the time:"))
+simple_Interest = principle*rate*time/100
+print(simple_Interest)
+
+#10. Ask the user for three numbers and print their mathematical average.
+num1 = int(input('enter number one:'))
+num2 = int(input('enter number two:'))
+num3 = int(input('enter number three:'))
+average = num1+num2+num3/3
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
