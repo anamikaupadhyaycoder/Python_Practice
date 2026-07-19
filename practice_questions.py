@@ -1,89 +1,69 @@
-# Basic Arithmetic & Operations(Q31-50)
-#11. Round the decimal number 7.8945 to exactly two decimal places.
-x = 7.8945
-round_x = round(x, 2)
-print(round_x)
+#Topic 2 (strings and conditional statements)
+#string Manipulation(Q51-65)
+#1. Merge two string variables str1 = "Hello" and str2 = "World" into one string with a space.
+str1 = "Hello"
+str2 = "World"
+string = str1 + " " + str2
+print(string)
 
-#12. Calculate the absolute value of $-15$ using a built-in function.
-num = -15
-absolute_value = abs(num)
-print(f"original: num = {num}")
-print(f"Absolute value: absolut_value = {absolute_value}")
+#2. Print the first character of the string "Database".
+word = "Database"
+print(word[0])
 
-#13. Find the square root of $144$ using the math module or exponentiation.
-x = 144
-squ_root = x**0.5
-print("square root: ",squ_root)
+#3. Print the last character of "Database" using negative indexing.
+wor = "Database"
+print(wor[-1])
 
-#14. Compute the final price of an item after applying a $15\%$ discount.
-item = 1000 
-dis = 1000 * 15/100
-print(dis)
+#4. Slice the word "Code" out of "PythonCode".
+wo = "Pythoncode"
+print(wo[-4:])
 
-#15. Ask for a 2-digit number and print the sum of its individual digits.
-two_dig = input("Ask for a two digit number:")
-fir_dig = int(two_dig[0])
-sec_dig = int(two_dig[1])
-sum = fir_dig + sec_dig
-print(sum)
+#5. Slice and reverse the string "computer".
+st = "computer"
+print(st[::-1])
 
-#16. Calculate Body Mass Index (BMI) using weight (kg) and height (meters).
-wei = 22
-hei = 5.5
-bmi = wei/hei**2
-print("Body mass index: ", bmi)
+#6. Find the total length of the string "Artificial Intelligence"
+w = "Artificial Intelligence"
+print(len(w))
 
-#17. Convert kilometers to miles ($1 \text{ km} \approx 0.621371 \text{ miles}$).
-km_1 = 0.621371
-n = 4# conversion of 4km into miles
-km_4 = n * km_1
-print(km_4)
+#7. Convert "learning is fun" to Title Case.
+ti = "learning is fun"
+print(ti.title())
 
-#18. Calculate the compound interest given principal, rate, and time.
-p = 100000
-r = 10/100
-n = 2#semi annual: interest is added every 6 months
-t = 1
-A = p*(1+(r/n))**(n*t)
-ci = A - p
-print("compound : ", ci)
+#8. Convert "PYTHON PROGRAMMING" to lower case.
+name = "PYTHON PROGRAMMING"
+print(name.lower())
 
-#19. Find the perimeter of a square given its side length.
-len = 4
-side = 4*len
-print("perimeter of square:", side)
+#9. Remove the leading and trailing spaces from "   clean me   "
+na = "   clean me   "
+print(na.strip())
 
-#20. Write a program that calculates the volume of a sphere ($V = \frac{4}{3} \pi r^3$).
-r = 2
-pie = 3.14
-volume = 4/3*pie*r**3
-print("volume of sphere:", volume)
+#10. Replace all occurrences of "s" with "$" in "successful".
+w = "successful"
+remove = w.replace("s", "$")
+print(remove)
 
+#11. Check if the string "Automation" starts with "Auto".
+word = "Automation"
+ch = word.startswith("Auto")
+print(ch)
 
+#12. Check if a string ends with the extension ".py".
+str1 = "anamiika.py"
+print(str1.endswith(".py"))
 
+#13. Find the index of the first occurrence of the word "great" in "Python is great".
+text = "Python is great."
+ind = text.find("great")
+print(ind)
 
+#14. Count how many times the character "o" appears in "school pool".
+text = "school pool"
+print(text.count("o"))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#15. Split the string "red,green,blue" into a list of colors.
+strq = "red,green,blue"
+print(strq.split(" , "))
 
 
 
