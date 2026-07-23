@@ -146,7 +146,7 @@ else:
 
 total = limit*fine
 print(f"total fine owed: int{fine*100}%")
-print(f"total fine charged: {total}")'''
+print(f"total fine charged: {total}")
 
 #15. Check if a speed limit of $80$ is exceeded; calculate fine of $10 per unit exceeded.
 sp = int(input("Enter speed of the vehicle: "))
@@ -159,27 +159,64 @@ total_fine = fine*(sp - 80)
 print(f"fine charged per unit exceeding: {fine}")
 print(f"total fine charged: {total_fine}")
 
+#16. Check if a number is divisible by $3$ and $7$ simultaneously.
+num = int(input("Enter a number: "))
+if num%3 == 0 and num%7 == 0:
+    print("Num is divisible by both 3 and 7")
+else:
+    print("Num is not divisible by both ")
 
+#17. Determine if a year is a century year (divisible by 100).
+year = int(input("Enter year:"))
+if year%100==0:
+    print("year is a centuray year")
+else:
+    print("it's not a centuray year")
 
+#18. Determine if a user input is a valid positive integer.
+num = int(input("Enter a number: "))
+if num > 0 :
+    print("it's a valid positive integer.")
+else:
+    print("it's not a valid integer")
 
+#19. Validate a user's password: must be at least 8 characters long.
+password = input("Enter user's password: ")
+length = len(password)
+if length>=8:
+    print("Valid password.")
+else:
+    print("NOt valid")
 
+#20. Determine if a point lies inside, outside, or on a circle of radius $R$ centered at $(0,0)$.
+R = float(input("Enter the radius of the circle (R):"))
+x = float(input("Enter the x-coordinate of the point: "))
+y = float(input("Enter the y-coordinate of the point: "))
 
+square_x_y = (x**2)+(y**2)
+square_R = R**2
 
+if square_x_y < square_R:
+    print("point lies inside the circle.")
+elif square_x_y == square_R:
+    print("point lies on the circle.")
+else:
+    print("point lies outside the circle.")'''
 
+#21.Simulate an XOR gate using standard logic operators.
+A = True
+B = False
 
+# Step 2: Simulate XOR logic using 'and', 'or', and 'not'
+if (A and not B) or (not A and B):
+    xor_result = True
+else:
+    xor_result = False
 
-
-
-
-
-
-
-
-
-
-
-
-
+# Step 3: Print the evaluation
+print(f"Input A: {A}")
+print(f"Input B: {B}")
+print(f"XOR Gate Output: {xor_result}")
 
 
 
