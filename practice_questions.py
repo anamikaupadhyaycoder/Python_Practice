@@ -1,126 +1,178 @@
 #Topic 2 (strings and conditional statements)
-#string Manipulation(Q66-80)
-#1. Take an integer input and print "Even" or "Odd".
-num = int(input("Enter a number:"))
-if num%2 == 0:
-    print("Even")
-else:
-    print("Odd")
-
-#2. Take a number and print whether it is "Positive", "Negative", or "Zero".
-num = int(input("enter a number:"))
-if num > 0:
-    print("positive")
-elif num < 0:
-    print("Negative")
-else:
-    print("zero")
-
-#3. Compare two numbers and print the larger one
-num1 = int(input("Enter first number:"))
-num2 = int(input("Enter second number:"))
-if num1 > num2:
-    print("num1 is the larger one")
-else:
-    print("num2 is the larger one")
-
-#4. Check if a user's age is $18$ or above to print "Eligible to Vote", otherwise "Not Eligible".
-age = int(input("Enter age:"))
-if age >= 18:
-    print("enligible to vote")
-else:
-    print("not eligible")
-
-#5. Write an if statement that checks if a user's password is exactly "admin123".
-password = "admin1234"
-if password == "admin123":
-    print("True")
-else:
-    print("false")
-
-#6. Check if a year is a leap year (divisible by 4, but not by 100 unless divisible by 400).
-year = int(input('enter year:'))
-if (year%4 == 0 and year%100 != 0) or (year%400 == 0 ):
-    print("year is a leap year")
-else:
-    print("it's not a leap year")
-
-#7. Check if a given character is a vowel or a consonant.
-char = input("Enter a character:")
-lower = char.lower()
-if lower in "aeiou":
-    print("it's a vowel")
-else:
-    print("it's a consonant")
-
-#8. Determine if a given number is a multiple of $5$.
-num = int(input("enter a number:"))
-if num%5 == 0:
-    print("multiple of 5")
-else:
-    print("not multiple of 5")
-
-
-#9. Create a program that takes an exam score and prints "Pass" if $\ge 50$, otherwise "Fail".
-marks = int(input('enter marks of students:'))
-if marks >= 50:
-    print("pass")
+#string Manipulation(Q81-100)
+#1. Create a grading system: $90+$ is A, $80-89$ is B, $70-79$ is C, under $70$ is F.
+'''marks = int(input("enter marks: "))
+if marks > 90:
+    print("Grade A")
+elif 79 < marks < 90:
+    print("Grade B")
+elif 69 < marks < 80:
+    print("Grade C")
 else:
     print("fail")
 
-#10. Take a string input and check if it contains only digits.
-di = input("enter something:")
-if di.isdigit():
-    print("di only contains digits")
+#2. Determine if a number is positive, even, and greater than $50$.
+num = int(input("enter a number:"))
+if num > 0 and num%2 == 0 and num > 50:
+    print("num is everything")
 else:
-    print("di not contains digits")
+    print("num is nothing")
 
-#11. Take two numbers and print "Equal" if they are equal, otherwise "Not Equal".
-first_num = int(input("Enter first num:"))
-sec_num = int(input("Enter second num:"))
-if first_num == sec_num:
-    print("Equal")
-else:
-    print("Not Equal")
-
-#12. Check if a given temperature is below $0^\circ\text{C}$ and print "Freezing!".
-temp = int(input("enter temperature:"))
-if temp<0:
-    print("Freezing")
-else:
-    print("Not Freezing")
-
-#13. Check if a user's typed string is empty.
-string = input("enter a word:")
-if string == "":
-    print("String is empty")
-else:
-    print("string is not empty")
-
-#14. Determine if a triangle with angles $a$, $b$, and $c$ is valid ($sum == 180$).
-a, b, c = input("enter three values seprated by lines: ").split()
+#3. Take three numbers and find the largest of them using nested if.
+a, b, c = input("three numbers are entered:").split()
 a1 = int(a)
 b1 = int(b)
 c1 = int(c)
-
-sum1 = a1 + b1 + c1
-if sum1 == 180:
-    print("a, b and c is valid")
+if a1 > b1:
+    if a1 > c1:
+       print("a1 is largest")
+    else:
+        print("c1 is largest")
+if b1 > c1:
+    print("b1 is largest")
 else:
-    print("a, b and c is not valid")
+    print("c1 is largest")
 
-#15. Take a single digit and print its name in words (e.g., 3 -> "Three").
-digit_words = {
-    '0': 'Zero', '1': 'One', '2': 'Two', '3': 'Three', '4': 'Four',
-    '5': 'Five', '6': 'Six', '7': 'Seven', '8': 'Eight', '9': 'Nine'
-}
-
-digit = input("Enter a single digit (0-9): ")
-
-if digit in digit_words:
-    print(digit_words [digit])
+#4. Write a mini-login system checking if username == "admin" AND password == "secret".
+username = input("enter username:")
+password = input("enter password:")
+if username == "admin":
+    if password == "secret":
+        print("Login Successful! Welcome, Admin.")
+    else:
+        print("Access Denied: Incorrect Password.")
 else:
-    print("Invalid input. Please enter a single digit between 0 and 9.")
+    print("Access Denied: Incorrect Username.")
+
+#5. Check if a coordinate $(x, y)$ lies in Quadrant 1 ($x > 0, y > 0$).
+x = int(input("enter value of x:"))
+y = int(input("enter value of y:"))
+if x > 0 :
+    if y > 0:
+        print("x and y both lies in quadrant.")
+    else:
+        print("y doesn't lie in the quadrant.")
+else:
+    print("x doen't lie in the quadrant.")
+
+#6. Classify a triangle as Equilateral, Isosceles, or Scalene based on three side inputs
+a = int(input("enter first side of triangle:"))
+b = int(input("enter second side of triangle:"))
+c = int(input("enter third side of triangle:"))
+if a == b == c:
+    print("triangle is equivalent")
+elif a == b or b == c or a == c:
+    print("triangle is isosceles")
+else:
+    print("triangle is scalane")
+
+#7.A shop offers a 10% discount if purchase exceeds $100 claculate final bill.
+doll = 100
+inr = doll * 85 
+discount = inr*10/100
+final_bill = inr - discount
+print(final_bill)
+
+#8.check if a string is a palindrome(reads same forward and backward).
+str1 = input("enter a string:")
+if str1 == str1[::-1]:
+    print("yes, it is a palindrome!")
+else:
+    print("No, it is not a palindrome!")
+
+#9.Categorize a person's age:kid(<13),Teen(13-19),Adult(20-59),Senior(60+).
+age = int(input("Enter age:"))
+if age < 13:
+    print("it is a kid.")
+if 12<age<20:
+    print("it is a teen.")
+elif 19<age<60:
+    print("it is a adult.")
+else:
+    print("it is a senior.")
+
+#10.Check if a month number(1-12) falls in summer, winter, spring, or autumn.
+mon_num = int(input("Enter month number:"))
+if mon_num in [3,4]:
+    print("it is a spring")
+if mon_num in [5,6,7,8]:
+    print("it is a Summers")
+elif mon_num in [9,10,11]:
+    print("it is a Autumn")
+else:
+    print("it is a Winters")
+
+#11.Build a basic text calculator taking two numbers and an operator(+,-,*,/).
+num1 = float(input("Enter 1st number:"))
+oper = input("Enter operator (+,-,*,/): ")
+num2 = float(input("Enter 2nd number:"))
+
+if oper == "+":
+    print(num1+num2)
+if oper == "-":
+    print(num1-num2)
+elif oper == "*":
+    print(num1*num2)
+else:
+    print(num1/num2)
+
+#12.Tax calculation:0% if income<$15k, 12% if $15k - $50k, 22% if > $50k.
+income = float(input("Enter your annual incomr ($): "))
+
+if income <  15000:
+    rate = 0.00
+elif 15000 <= income <= 50000:
+    rate = 0.12
+else:
+    rate = 0.22
+
+tax = income*rate
+print(f"Applied Tax Rate: {int(rate*100)}%")
+print(f"Total Tax Owed: ${tax:,.2f}")
+
+#13. Verify if a string starts with "A" and ends with "Z".
+string = input("Enter a string: ")
+if string.startswith("A") and string.endswith("Z"):
+    print("string starts with A and ends with Z")
+else:
+    print("string is not start with A and not end with Z")
+
+#14. Check if a speed limit of $80$ is exceeded; calculate fine of 10% percent.
+limit = int(input("Enter sppeed of the vehicle: "))
+if limit > 80:
+    fine = 0.10
+else:
+    fine = 0.00
+
+total = limit*fine
+print(f"total fine owed: int{fine*100}%")
+print(f"total fine charged: {total}")'''
+
+#15. Check if a speed limit of $80$ is exceeded; calculate fine of $10 per unit exceeded.
+sp = int(input("Enter speed of the vehicle: "))
+if sp <= 80:
+    fine = 0
+else:
+    fine = 10
+
+total_fine = fine*(sp - 80)
+print(f"fine charged per unit exceeding: {fine}")
+print(f"total fine charged: {total_fine}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
