@@ -1,6 +1,6 @@
 #Sets & Set Operations (Q181–200)
 #1. Create a set of 5 prime numbers and print it.
-'''set1 = {1, 5, 3, 7, 9}
+set1 = {1, 5, 3, 7, 9}
 print(set1)
 
 #2. Try adding a duplicate number to a set and observe that duplicates are ignored.
@@ -93,14 +93,14 @@ else:
 b = {1, 2, 6, 7}
 list1 = [5, 8, 3]
 b.update(list1)
-print(b
+print(b)
 
 #19. Write a program to find common elements from three different sets.
 a = {2, 5, 3, 7}
 b = {3, 5, 8, 7}
 c = {2, 3, 7, 5}
 result = a.intersection(b,c)
-print(result)'''
+print(result)
 
 
 #20. Create a set of vowels and find how many vowels are present in a user's name.
@@ -114,6 +114,8 @@ for letter in name:
 
 print("number of vowels:", count)
 
+b = {3, 5, 2}
+print(b)
 
 
 
