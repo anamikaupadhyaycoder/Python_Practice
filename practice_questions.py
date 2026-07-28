@@ -1,6 +1,6 @@
 #Advanced Dictionary Logic (Q166–180)
 #1. Create a nested dictionary representing a classroom of 3 students.
-'''nes_dic = {
+nes_dic = {
     "student 1" : {
         "name" : "anamika",
         "age" : 12, 
@@ -59,7 +59,7 @@ classroom = {
     }
 }
 grade = classroom.get('student 2', {}).get('grade', 'Grade not found')
-print(grade
+print(grade)
 
 #4. Map two lists (one of names, one of scores) into a single dictionary.
 names = ['anamika', 'aayushi', 'shreya']
@@ -159,7 +159,7 @@ dict_to_sort = {
 }
 
 sorted_dict = dict(sorted(dict_to_sort.items()))
-print(sorted_dict)'''
+print(sorted_dict)
 
 #14. Sort a dictionary by its values in ascending order.
 dict_to_sort = {
@@ -173,12 +173,12 @@ sorted_dict_by_values = dict(sorted(dict_to_sort.items(), key=lambda item: item[
 print(sorted_dict_by_values)
 
 
-
-
-
-
-
-
+# 15. Combine two dictionaries by adding values for common keys.
+from typing import Counter
+dict1 = {"a" : 100, "b" : 200, "c" : 300}
+dict2 = {"a" : 500, "b" : 400, "c" : 350}
+result = dict(Counter(dict1)+ Counter(dict2))
+print(result)
 
 
 
