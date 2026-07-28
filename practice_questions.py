@@ -1,242 +1,118 @@
-#Advanced Dictionary Logic (Q166–180)
-#1. Create a nested dictionary representing a classroom of 3 students.
-nes_dic = {
-    "student 1" : {
-        "name" : "anamika",
-        "age" : 12, 
-        "grade" : "A"
-    },
-    "student 2" : {
-        "name" : "aayushi",
-        "age" : 13, 
-        "grade" : "C"
-    },
-    "student 3" : {
-        "name" : "shreya", 
-        "age" : 14,
-        "grade" : "B"
-    }
-}
-print(nes_dic)
+#Sets & Set Operations (Q181–200)
+#1. Create a set of 5 prime numbers and print it.
+'''set1 = {1, 5, 3, 7, 9}
+print(set1)
 
-#2. Access the grade of the second student inside the nested dictionary.
-classroom = {
-    "student 1" : {
-        "name" : "anamika",
-        "age" : 12, 
-        "grade" : "A"
-    },
-    "student 2" : {
-        "name" : "aayushi",
-        "age" : 13, 
-        "grade" : "C"
-    },
-    "student 3" : {
-        "name" : "shreya", 
-        "age" : 14,
-        "grade" : "B"
-    }
-}
+#2. Try adding a duplicate number to a set and observe that duplicates are ignored.
+set1 = {2, 6, 3, 2}
+print(set1)
 
-print(classroom['student 2']['name'])
+#3. Add a new element to a set using .add().
+set1 = {2, 6, 3, 2}
+set1.add(4)
+print(set1)
 
-#3. Use the .get() method to safely retrieve the grade key without throwing an error.
-classroom = {
-    "student 1" : {
-        "name" : "anamika",
-        "age" : 12, 
-        "grade" : "A"
-    },
-    "student 2" : {
-        "name" : "aayushi",
-        "age" : 13, 
-        "grade" : "C"
-    },
-    "student 3" : {
-        "name" : "shreya", 
-        "age" : 14,
-        "grade" : "B"
-    }
-}
-grade = classroom.get('student 2', {}).get('grade', 'Grade not found')
-print(grade)
+#4. Remove an element from a set using .remove() (raises error if element not found).
+set1 = {2, 6, 3, 7}
+set1.remove(3)
+print(set1)
 
-#4. Map two lists (one of names, one of scores) into a single dictionary.
-names = ['anamika', 'aayushi', 'shreya']
-scores = [94, 74, 86]
+#5. Safely remove an element from a set using .discard() (does not raise error).
+set1 = {2, 6, 3, 7}
+set1.discard(3)
+print(set1)
 
-classroom_scores = dict(zip(names, scores))
-print(classroom_scores)
+#6. Find the union of two sets of numbers.
 
-#5. Create a dictionary where the keys are numbers 1 to 5, and values are their squares.
-num = {
-    1 : 1**2,
-    2 : 2**2,
-    3 : 3**2,
-    4 : 4**2,
-    5 : 5**2
-}
-print(num)
-
-#6. Remove all keys with None values from a dictionary.
-num = {
-    1 : 1**2,
-    2 : 2**2,
-    3 : 3**2,
-    4 : 4**2,
-    5 : 5**2
-}
-
-s = num.clear()
-print(s)
-print(num)
-
-"""
-7. Extract a subset of a dictionary (keys a and b only) into a new dictionary.
-original_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
-keys_to_extract = {'a', 'b'}
-subset_dict = {key: original_dict[key] for key in keys_to_extract if key in original_dict}
-print(subset_dict)
-"""
-
-#8. Find the key with the highest value in a dictionary.
-num_dict = {
-    'num1' : 24,
-    'num2' : 45,
-    'num3' : 73,
-    'num4' : 12
-}
-highest_value = max(num_dict, key=num_dict.get)
-print(highest_value)
-
-#9. Check if all values in a dictionary are identical.
-num_dict = {
-    'num1' : 10,
-    'num2' : 10,
-    'num3' : 10,
-    'num4' : 10
-}
-
-all_same_1 = len(set(num_dict.values())) == 1
-print(f"Are all values in num_dict identical? {all_same_1}")
-
-#10. Reverse a dictionary (swap keys and values, assuming values are unique).
-num_dict = {
-    'num1' : 22,
-    'num2' : 11,
-    'num3' : 70,
-    'num4' : 19
-}
-reversed_dict = {value: key for key, value in num_dict.items()}
-print(reversed_dict)
-
-#11. Create a dictionary of words and their lengths from a list of words.
-lis = ["apple", "banana", "mango", "kiwi"]
-word_len = {word: len(word) for word in lis}
-print(word_len)
-
-#12. Use a dictionary to map weekdays (1 -> "Monday", 2 -> "Tuesday", etc.).
-week_dict = {
-    1 : "monday",
-    2 : "Tuesday", 
-    3 : "wednesday", 
-    4 : "thursday", 
-    5 : "friday",
-    6: "Saturday",
-    7: "Sunday"
-}
-
-print("weekdays 3:", week_dict[3])
-print("weekdays 7:", week_dict.get(7, "Invalid day"))
-print(week_dict) 
-
-#13. Sort a dictionary by its keys in alphabetical order.
-dict_to_sort = {
-    'banana': 3,
-    'apple': 4,
-    'pear': 1,
-    'orange': 2
-}
-
-sorted_dict = dict(sorted(dict_to_sort.items()))
-print(sorted_dict)
-
-#14. Sort a dictionary by its values in ascending order.
-dict_to_sort = {
-    'banana': 3,
-    'apple': 4,
-    'pear': 1,
-    'orange': 2
-}
-
-sorted_dict_by_values = dict(sorted(dict_to_sort.items(), key=lambda item: item[1]))
-print(sorted_dict_by_values)
-
-
-# 15. Combine two dictionaries by adding values for common keys.
-from typing import Counter
-dict1 = {"a" : 100, "b" : 200, "c" : 300}
-dict2 = {"a" : 500, "b" : 400, "c" : 350}
-result = dict(Counter(dict1)+ Counter(dict2))
+set1 = {2, 6, 3, 7}
+set2 = {3, 5, 8, 7}
+result = set1.union(set2)
 print(result)
 
+#7. Find the intersection of two sets of numbers.
+set1 = {2, 6, 3, 7}
+set2 = {3, 5, 8, 7}
+result = set1.intersection(set2)
+print(result)
+
+#8. Find the difference between two sets (elements in A but not in B).
+a = {2, 6, 3, 7}
+b = {3, 5, 8, 7}
+result = a-b
+print(result)
+
+#9. Find the symmetric difference between two sets.
+a = {2, 6, 3, 7}
+b = {3, 5, 8, 7}
+result = a.symmetric_difference(b)
+print(result)
+
+#10. Check if a set is a subset of another set.
+a = {2, 6}
+b = {1, 2, 6, 7}
+print(a.issubset(b))
+
+#11. Check if two sets have no elements in common (disjoint).
+a = {12, 4}
+b = {1, 2, 6, 7}
+print(a.isdisjoint(b))
+
+#12. Convert a list of duplicate numbers into a set to find unique values.
+list1 = (2, 5, 6, 8, 2, 3, 6, 5)
+result = set(list1)
+print(result)
+
+#13. Find the length of a set.
+b = {1, 2, 6, 7}
+print(len(b))
+
+#14. Clear all elements from a set.
+b = {1, 2, 6, 7}
+result = b.clear()
+print(result)
+
+#15. Remove and return an arbitrary element from a set using .pop().
+b = {1, 2, 6, 7}
+result = b.pop()
+print(result)
+print(b)
+
+#16.Convert a set into a sorted list.
+b = {8, 3, 5, 7}
+result = sorted(b)
+print(result)
+
+#17. Check if an item exists inside a set.
+b = {1, 2, 6, 7}
+if 6 in b:
+    print('element exits in set b')
+else:
+    print("element not exits")
+
+#18. Update a set with elements from a list.
+b = {1, 2, 6, 7}
+list1 = [5, 8, 3]
+b.update(list1)
+print(b
+
+#19. Write a program to find common elements from three different sets.
+a = {2, 5, 3, 7}
+b = {3, 5, 8, 7}
+c = {2, 3, 7, 5}
+result = a.intersection(b,c)
+print(result)'''
 
 
+#20. Create a set of vowels and find how many vowels are present in a user's name.
+vowels = {"a", "e", "i", "o" "u"}
+name = input("enter user's name:").lower()
+count = 0
 
+for letter in name:
+    if letter in vowels:
+        count += 1
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print("number of vowels:", count)
 
 
 
