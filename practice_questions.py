@@ -1,119 +1,99 @@
-#Topic 5: Loops in Python (50 Questions)
-#For Loops (Q201–215)
-#1. Print numbers from $1$ to $10$ using a for loop.
+#Loops in Python (50 Questions)
+#While Loops (Q216–230)
+#1. Print numbers from $1$ to $10$ using a while loop.
 
-'''for i in range(1,11,1):
+'''i = 0
+
+while i<=10:
+    i+=1
     print(i)
 
+#2. Print numbers from $10$ down to $1$ using a while loop.
 
-#2. Print all even numbers between $1$ and $30$ using a for loop with a step.
-
-for i in range(2,31,2):
+i = 10
+while i >=1:
     print(i)
+    i-=1
 
-#3. Print all odd numbers between $1$ and $30$ using a for loop.
-for i in range(1, 31, 2):
-    print(i)
+#3. Keep asking the user for input until they type "exit".
 
-#4. Sum all numbers from $1$ to $50$ using a loop and print the total.
+while True:
+    user_input = input("Enter something (type 'exit' to quit): ")
+
+    if user_input.lower() == "exit":
+        print("Program terminated.")
+        break
+
+    print("You entered:", user_input)
+
+#4. Keep adding user inputs to a sum until the user enters $0$.
+
 total = 0
 
-for i in range(1, 51):
-    total+=i
-print(total)
+while True:
+    user_input = int(input("enter input(type '0' to exit ): "))
 
-#5. Print the multiplication table of a user-inputted number.
-num = int(input("enter a number:"))
+    if user_input == 0:
+        break
+    
 
-for i in range(1, 11):
-    print(f"{num} x {i} = {num * i}")
+    total+=user_input
 
-#6. Print each character of the string "DEVELOPER" on a separate line.
-word = "DEVELOPER"
+print("sum=", total)
 
-for ch in word:
-    print(ch)
+#5. (Number Guessing): Let a user guess a secret number until they get it correct.
+secret_number = 25
 
-#7.iterate over a list of names and print a greeting for each.
-names = ["vanshika","misha","ishqi","mihir"]
+while True:
+    guess = int(input("Guess the secret number: "))
 
-for name in names:
-    print(f"Hello: , {name}! Hope you have a great day.")
+    if guess == secret_number:
+        print("Congratulations! You guessed the correct number.")
+        break
+    else:
+        print("Wrong guess. Try again!")
 
-#8. Print numbers from $10$ down to $1$ using a for loop and range().
+#6. Find the sum of digits of a given integer using a while loop.
 
-for i in range(10,0,-1):
-    print(i)
+number = int(input("Enter an integer: "))
 
-#9. Print the squares of all numbers from $1$ to $10$.
+sum_of_digits = 0
 
-for i in range(1,11,1):
-    product  = i**2
-    print(product)
+while number > 0:
+    digit = number % 10
+    sum_of_digits += digit
+    number = number // 10
 
-#10. Count the total number of vowels in a string using a loop.
-string = input("Enter a word: ").lower()
+print("Sum of digits =", sum_of_digits)
 
+#7. Reverse a given integer using arithmetic operations in a while loop.
+
+number = int(input("enter an integer: "))
+
+reverse = 0 
+
+while number > 0:
+    digit = number % 10  
+    reverse = reverse*10+digit
+    number = number//10
+
+print("Reversed number =", reverse)'''
+
+#8. Print the first $N$ terms of the Fibonacci sequence using a loop.
+n = int(input("Enter the number of terms: "))
+
+a = 0
+b = 1
 count = 0
 
-for ch in string:
-    if ch in "aeiou":
-        count+=1
-print("Total numbers:", count)
+print("Fibonacci Sequence:")
 
-#11. Calculate the product of all numbers in a list.
-nums = [1, 5, 3, 6]
-
-product = 1
-
-for num in nums:
-    product *=num
-    print(f"product of all numbers: {product}")
-
-#12. print a horizontal row of 10 asterisks (*) using a loop
-
-for i in range(10):
-    print("*", end= " ")
-
-#13. Print elements of a list along with their index using enumerate().
-
-nums = [3,2,5,8,7,1]
-
-for index, item in enumerate(nums):
-    print(index, item)
-
-#14. Print all numbers between $100$ and $200$ that are divisible by $7$.
-
-for i in range(100, 200):
-    if i%7 == 0:
-        print(i)'''
-
-#15. Print the elements of a tuple in reverse order using a loop.
-    
-nums = (3, 5 ,8, 2, 9)
-
-
-for i in range(len(nums) - 1, -1, -1):
-    print(nums[i])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+while count < n:
+    print(a, end=" ")
+    c = a + b
+    a = b
+    b = c
+    count += 1
 
 
 
