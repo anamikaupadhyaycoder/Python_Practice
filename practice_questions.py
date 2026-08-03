@@ -77,7 +77,7 @@ while number > 0:
     reverse = reverse*10+digit
     number = number//10
 
-print("Reversed number =", reverse)'''
+print("Reversed number =", reverse)
 
 #8. Print the first $N$ terms of the Fibonacci sequence using a loop.
 n = int(input("Enter the number of terms: "))
@@ -95,9 +95,21 @@ while count < n:
     b = c
     count += 1
 
+#9. Count the number of digits in an integer by repeatedly dividing by 10 in a loop.
+num = int(input("Enter an integer: "))
 
+count = 0
 
+while num != 0:
+    num = num // 10
+    count = count + 1
 
+print("Number of digits =", count)'''
+
+#Print numbers from 50 to 10 in reverse with a step of 5.
+
+for i in range(50,5,-5):
+    print(i)
 
 
 
