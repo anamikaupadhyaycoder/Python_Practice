@@ -90,14 +90,14 @@ count = 0
 while count < n:
     print(a)
     a,b=b,a+b
-    count+=1'''
+    count+=1
 #prints all Fibonacci numbers less than or equal to 100
-'''a = 0
+a = 0
 b = 1
 
 while a<=100:
     print(a)
-    a,b = b,a+b'''
+    a,b = b,a+b
 
 fact = 1
 
@@ -108,6 +108,39 @@ while i <=num:
     i+=1
 
 print(fact)
+
+n = int(input("enter a number:"))
+fact = 1
+
+for i in range(n):
+    fact *= (i+1)
+print(fact)
+
+for i in range(3):
+    for j in range(3):
+        print("*", end=" ")
+    print()
+
+for i in range(5):
+    for j in range(i+1):
+        print("*", end=" ")
+    print()
+
+for i in range(5):
+    for j in range(5-i):
+        print("*", end=" ")
+    print()'''
+
+for i in range(5):
+    for j in range(4-1-i):
+        print(" ", end=" ")
+        for z in range(i+1):
+            print("*", end=" ")
+    print()
+    
+
+
+
 
 
 
