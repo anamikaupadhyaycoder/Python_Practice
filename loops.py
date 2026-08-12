@@ -357,30 +357,132 @@ HCF = 0
 for i in range(1, 20):
     if num1%i==0 and num2%i==0:
         HCF=i
-print(HCF)'''
+print(HCF)
 
-#write a program that findds the LCM of 4 and 6 using a for loop. 
-num1 = 3
-num2 = 5
+#write a program that finds the LCM of 4 and 6 using a for loop. 
+num1 = 4
+num2 = 6
 
 
 
-for i in range(4, num1*num2+1):
+for i in range(1, num1*num2+1):
     if i%num1==0 and i%num2==0:
         print(i)
         break
+
+#write a program that takes a number from the user and counts its digits using a while loop. 
+num = int(input("enter a number:"))
     
+count = 0
 
- 
+while num>0:
+    digits = num%10
+    count+=1
+    num//=10
+print(count)
+
+#write a program that takes a number from ther user and perform sum of digits using a while loop. 
+num = int(input("enter a number:"))
+
+total = 0 
+
+while num>0:
+    digits = num%10
+    total+=digits
+    num//=10
+print(total)
+
+#write a program that takes a number from the user and find the product of its digits.
+num = int(input("enter a number:"))
+
+product = 1
+
+while num>0:
+    digits = num%10
+    product*=digits
+    num//=10
+print(product)
+
+#write a program that takes a number and print reverse of the number using while loop. 
+num = 1234
+
+reverse = 0 
+
+while num>0:
+    digit = num%10
+    reverse = reverse*10+digit
+    num//=10
+print(reverse)
+
+#write a program to find whether the number is palindrome or not. 
+
+num = int(input("enter a number:"))
+
+original = num
+
+reverse = 0 
+
+while num>0:
+    digit = num%10
+    reverse = reverse*10+digit
+    num//=10
+
+if reverse == original:
+    print("Number is a palindrome number.")
+else:
+    print("Number is not a palindrome number.")
+
+#write a program that takes a number from the user and prints:First digit and Last digit.
+num = int(input("enter a number:"))
 
 
+First_digit = 0
+Last_digit = 0
 
+Last_digit = num%10
+
+while num>10:
+    num//=10
+    First_digit = num
+print(First_digit)
+print(Last_digit)
+
+#Take a number form the user and remove its last digit repeatedly, printing the number each time. 
+num = int(input("enter a number:"))
+
+while num>0:
+    print(num)
+    num//=10
+
+for i in range(1, 6):
+    for j in range(1, 11):
+        print(f"{i} * {j} =", i*j)
+    print()
+
+for i in range(1, 4):
+    for j in range(1, 4):
+        print(i,j)
+#Write a Python program using nested for loops to generate all pairs (i, j) where:i ranges from 1 to 3
+#j ranges from 1 to 3
+#Print the pair only when i + j is even
+
+
+for i in range(1, 4):
+    for j in range(1, 4):
+        if (i+j)%2==0:
+           print(f"{i}, {j}=", i+j)'''
+
+
+#Write a program using nested for loops to print all pairs (i, j) where:
+
+#Write a program using nested for loops to print all pairs (i, j) where:i goes from 1 to 5
+#j goes from 1 to 5
+#Print the pair only if i × j is divisible by 3
     
-
-
-
-
-    
+for i in range(1, 6):
+    for j in range(1, 6):
+        if (i*j)%3==0:
+            print(i,j)
 
 
 
