@@ -1,5 +1,5 @@
-#prints all Fibonacci numbers less than or equal to 100
-'''a = 0
+'''#prints all Fibonacci numbers less than or equal to 100
+a = 0
 b = 1
 
 while a<=100:
@@ -118,7 +118,7 @@ for i in range(4):
 4 4 4 4 
 3 3 3
 2 2
-1'
+1
 for this code
 for i in range(1, 5):
     for j in range(i):
@@ -470,29 +470,51 @@ for i in range(1, 4):
 for i in range(1, 4):
     for j in range(1, 4):
         if (i+j)%2==0:
-           print(f"{i}, {j}=", i+j)'''
+           print(f"{i}, {j}=", i+j)
 
 
 #Write a program using nested for loops to print all pairs (i, j) where:
 
 #Write a program using nested for loops to print all pairs (i, j) where:i goes from 1 to 5
 #j goes from 1 to 5
-#Print the pair only if i × j is divisible by 3
+#Print the pair only if i x j is divisible by 3
     
 for i in range(1, 6):
     for j in range(1, 6):
         if (i*j)%3==0:
             print(i,j)
 
+13-08-2026
+#write a program that prints the larger number between each paira: (5,3) (2,8)(7,7)(10,10)
+pairs = [(5,3), (2,8), (7,7), (10,4)]
+for a, b in pairs:
+    if a>=b:
+        print(a)
+    else:
+        print(b)
 
+#Try writing this yourself without looking at my complete code:
 
+pairs = [(4, 9), (12, 6), (3, 3), (15, 20)]
 
+for a, b in pairs:
+    if a>=b:
+        print(a)
+    else:
+        print(b)
 
+#Write a program that prints the even numbers from 1 to 5 for each row:
+for i in range(1,6):
+    for j in range(1, i+1):
+        if (j*2)%2==0:
+           print(j*2 ,end=" ")
+    print( )'''
 
-
-
-
-
+for i in range(1,6):
+    for j in range(1,2*i, 2):
+        if j%2!=0:
+           print(j ,end=" ")
+    print( )
 
 
 
