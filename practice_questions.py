@@ -1,55 +1,57 @@
-#Takes 10 numbers from the user and counts how many numbers are greater than the previous number.
+#7. Iterate over a list of names and print a greeting for each.
+fruits=["apple", "mango", "litchi", "kiwi"]
 
-previous_num = int(input("enter a number:"))
-count = 0
+for i in range(1,4):
+    print(fruits)
 
-for i in range(1,10):
-    num=int(input("enter a number:"))
-    if num>previous_num:
-        count+=1
-    previous_num=num
-print(count)
-#Takes 10 numbers from the user and counts how many times the current number is smaller than the previous number.
+#8. Print numbers from $10$ down to $1$ using a for loop and range().
+for i in range(10, 0, -1):
+    print(i)
 
-previous_num=int(input("enter a numbe:"))
+#9. Print the squares of all numbers from $1$ to $10$.
+for i in range(1,11):
+    print(f"{i} =", i**2)
+
+#10. Count the total number of vowels in a string using a loop.
+string = "developer".lower()
 
 count=0
-
-for i in range(1,10):
-    num=int(input("enter a number:"))
-    if num<previous_num:
+vowels="aeious"
+for ch in string:
+    if ch in vowels:
         count+=1
-    previous_num=num
-print("number of decreases:", count)
+print(count)
 
-#Take 10 numbers and find the largest difference between two consecutive numbers.
-previous_num=int(input("enter a number:"))
+#11. Calculate the product of all numbers in a list.
+lis = [1, 4, 3, 6]
 
-diff = 0 
-largest_diff=0
-for i in range(1,10):
-    num=int(input("enter a number:"))
-    diff = num-previous_num
-    diff=abs(diff)
-    if diff>largest_diff:
-        largest_diff=diff
-    previous_num=num
-print(largest_diff)
+product=1
+for num in lis:
+    product*=num
+print(product)
 
-#Takes 10 numbers from the user and finds the largest number and the position at which it was entered.
-
-largest_num=0
-position=0
+#12. Print a horizontal row of 10 asterisks (*) using a loop.
 
 for i in range(1,11):
-    num=int(input("enter a number:"))
+    print("*", end=" ")
 
-    if largest_num is None or num>largest_num:
-        largest_num=num
-        largest_num=num
-        position=i
+#13. Print elements of a list along with their index using enumerate().
+lis = ["a", "b", "c", "d"]
 
-print(largest_num)
-print(position)
+for index, item in enumerate(lis):
+    print(index, item)
+
+#14. Print all numbers between $100$ and $200$ that are divisible by $7$.
+for i in range(100,201):
+    if i%7==0:
+        print(i)
+
+#15. Print the elements of a tuple in reverse order using a loop.
+
+tup=(3, 5, 6, 8)
+
+for item in reversed(tup):
+    print(item)
+
 
 
