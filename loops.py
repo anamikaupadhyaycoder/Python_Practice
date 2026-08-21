@@ -1,4 +1,4 @@
-'''#prints all Fibonacci numbers less than or equal to 100
+#prints all Fibonacci numbers less than or equal to 100
 a = 0
 b = 1
 
@@ -484,7 +484,7 @@ for i in range(1, 6):
         if (i*j)%3==0:
             print(i,j)
 
-13-08-2026
+#13-08-2026
 #write a program that prints the larger number between each paira: (5,3) (2,8)(7,7)(10,10)
 pairs = [(5,3), (2,8), (7,7), (10,4)]
 for a, b in pairs:
@@ -503,12 +503,19 @@ for a, b in pairs:
     else:
         print(b)
 
+print("or")
+
+pairs = [(4, 9), (12, 6), (3, 3), (15, 20)]
+
+for a, b in pairs:
+    print(max(a,b))
+
 #Write a program that prints the even numbers from 1 to 5 for each row:
 for i in range(1,6):
     for j in range(1, i+1):
         if (j*2)%2==0:
            print(j*2 ,end=" ")
-    print( )'''
+    print( )
 
 for i in range(1,6):
     for j in range(1,2*i, 2):
@@ -516,34 +523,415 @@ for i in range(1,6):
            print(j ,end=" ")
     print( )
 
+#print all even numbers form 1 to 20 using a nested loop. 
+for i in range(1):
+    for j in range(1, 10):
+        if (j*2)%2==0:
+            print(j*2, end=" ")
+    
+#print the multiplication tabkes form 1 to 5.
+for i in range(1,6):
+    for j in range(1,11):
+        print(i*j,end=" ")
+    print()
+
+for i in range(5):
+    for j in range(i+1):
+        print(j+1, end=" ")
+    print()
+
+#14-08-2026
+num1 = int(input("enter a number:"))
+num2= int(input("enter a number:"))
+
+for i in range(1, min(num1, num2)+1):
+    if num1%i==0 and num2%i==0:
+        print(i)
+
+#HCF
+num1= int(input("enter a number:"))
+num2 = int(input("enter a number:"))
+
+HCF= 0 
+
+for i in range(1, min(num1, num2)+1):
+    if num1%i==0 and num2%i==0:
+        HCF=i
+print(HCF)
+
+#LCM
+num1 = int(input("enter a number:"))
+num2 = int(input("enter a number:"))
+
+for i in range(1, num1*num2+1):
+    if i%num1==0 and i%num2==0:
+        print(i)
+        break 
+
+#Ask the user to enter 5 numbers, one by one, and find the largest number. 
+
+largest = int(input("enter a number:"))
+
+for i in range(4):
+    num = int(input("enter number:"))
+    if num>largest:
+        largest=num
+print(largest)
+
+#Ask the user to take 5 numbers and find the smallest. 
+smallest = int(input("enter a number:"))
+
+for i in range(4):
+    num = int(input("enter a number"))
+    if num<smallest:
+        smallest = num
+print(smallest)
 
 
+#Write a Python program that asks the user to enter 10 numbers. The program should count how many of the entered numbers are even and how many are odd. Finally, display the total count of even numbers and odd numbers.
+
+even_num= 0
+odd_num= 0
+
+for i in range(10):
+    num = int(input("enter a number:"))
+    if num%2==0:
+        even_num+=1
+    else:
+        odd_num+=1
+print(even_num)
+print(odd_num)
+
+#Write a Python program that asks the user to enter 20 numbers.Your program should count:How many numbers are divisible by 3.  How many numbers are divisible by 5.  How many numbers are divisible by both 3 and 5
+
+Divi_by_3 = 0
+Divi_by_5 = 0 
+Divi_by_3_and_5 = 0 
 
 
+for i in range(1, 21):
+    num = int(input("enter a number"))
+    if num%3==0:
+        Divi_by_3+=1
+    if num%5==0:
+        Divi_by_5+=1
+    if num%3 == 0 and num%5 == 0:
+        Divi_by_3_and_5+=1
+print(Divi_by_3)
+print(Divi_by_5)
+print(Divi_by_3_and_5)
+
+#Write a python program that asks the user to enter 10 numbers. The program should: 1. check which numbers are divisible by 5. 2. Add those numbers together. 3. Finally print their sum. 
+
+total = 0 
+
+for i in range(1,11):
+    num = int(input("enter a number: "))
+    if num%5==0:
+        total+=num
+print(total)
+
+#Ask the user to enter 20 numbers. Find the sum of all numbers that are divisible by BOTH 3 and 5.
+
+total = 0 
+
+for i in range(1,21):
+    num = int(input("enter a number:"))
+    if num%3==0 and num%5==0:
+        total+=num
+print(total)
+
+#Ask the user to enter 10 numbers.Find the largest even number among them.
+
+largest = None
+
+for i in range(1,11):
+    num = int(input("enter a number:"))
+    if num%2==0:
+        if largest is None or num>largest:
+           largest = num
+print(largest)
+
+#Ask the user to enter 10 numbers. Find the smallest odd number among them. 
+smallest = None
+
+for i in range(1,11):
+    num = int(input("enter a number:"))
+    if num%2!=0:
+       if smallest is None or num < smallest:
+        smallest = num
+print(smallest)
+
+#15-08-2026
+#Ask the user to enter 10 numbers. 1. How many numbers are even 2. The sum of all even numbers.
+
+total = 0 
+
+count = 0 
+
+for i in range(1,11):
+    num = int(input("enter a number:"))
+    if num%2==0:
+        total+=num
+        count+=1
+print(total)
+print(count)
+
+#Count numbers satisfying two conditions.Ask the user to enter 10 numbers.1. How many numbers are divisible by both 3 and 5 2. Thee sum of those numbers.
+total = 0 
+
+count = 0 
+
+for i in range(1,11):
+    num = int(input("enter a number:"))
+    if num%3==0 and num%5==0:
+        total+=num
+        count+=1
+print(total)
+print(count)
+
+#Ask the user to enter 10 numbers. Find the largest number that is divisible by both 3 and 5.
+
+largest = None
+
+for i in range(1,11):
+    num = int(input("enter a number:"))
+    if num%3==0 and num%5==0:
+        if largest is None or num>largest:
+            largest = num
+print(largest)
+
+#Ask the user to enter 10 numbers. Find the smallest positive number among them. 
+
+smallest = None
+
+for i in range(1,11):
+    num = int(input("enter a number:"))
+    if num>0:
+        if smallest is None or num<smallest:
+            smallest = num
+print(smallest)
+
+#Ask the user to enter 10 numbers. Find the largest negative number among them.
+
+largest = None
+
+for i in range(1,11):
+    num = int(input("enter a number:"))
+    if num<0:
+        if largest is None or num>largest:
+            largest = num
+print(largest)
+
+#Two groups
+#Ask the user to enter 10 numbers.Find:the largest even number and the smallest odd number. 
+
+largest = None
+
+smallest = None
+
+for i in range(1,11):
+    num = int(input("enter a number:"))
+    if num%2==0:
+        if largest is None or num>largest:
+            largest = num
+    else:
+        if smallest is None or num<smallest:
+            smallest = num
+print(largest)
+print(smallest)
+
+#Count increasing pairs. Ask the user to enter 10 numbers. For each number after the first, compare it with the previous number. Find how many times the current number is greater than the previous number. 
+
+previous = int(input("enter a number:"))
+count = 0 
+
+for i in range(1,11):
+    num = int(input("enter a number:"))
+    if num>previous:
+        count+=1
+print(count)
+
+n = int(input('enter a number:'))
+
+#Takes 10 numbers from the user and counts how many numbers are greater than the previous number.
+
+previous_num = int(input("enter a number:"))
+count = 0
+
+for i in range(1,10):
+    num=int(input("enter a number:"))
+    if num>previous_num:
+        count+=1
+    previous_num=num
+print(count)
+#Takes 10 numbers from the user and counts how many times the current number is smaller than the previous number.
+
+previous_num=int(input("enter a numbe:"))
+
+count=0
+
+for i in range(1,10):
+    num=int(input("enter a number:"))
+    if num<previous_num:
+        count+=1
+    previous_num=num
+print("number of decreases:", count)
+
+#Take 10 numbers and find the largest difference between two consecutive numbers.
+previous_num=int(input("enter a number:"))
+
+diff = 0 
+largest_diff=0
+for i in range(1,10):
+    num=int(input("enter a number:"))
+    diff = num-previous_num
+    diff=abs(diff)
+    if diff>largest_diff:
+        largest_diff=diff
+    previous_num=num
+print(largest_diff)
+
+#Takes 10 numbers from the user and finds the largest number and the position at which it was entered.
+
+largest_num=None
+position=0
+
+for i in range(1,11):
+    num=int(input("enter a number:"))
+
+    if largest_num is None or num>largest_num:
+        largest_num=num
+        position=i
+
+print(largest_num)
+print(position)
+
+#Take 10 numbers from the user and find the smallest number and the position at which it was entered.
+
+smallest_num=None
+position=0
+
+for i in range(1,11):
+    num=int(input("enter a number:"))
+    if smallest_num is None or num<smallest_num:
+        smallest_num=num
+        position=i
+    
+print(smallest_num)
+print(position)
+
+#Take 10 numbers and find the second largest number.
 
 
+largest_num=None
+second_largest=None
+
+for i in range(1,11):
+    num=int(input("enter a number:"))
+    if largest_num is None or num>largest_num:
+        second_largest=largest_num
+        largest_num=num
+    elif second_largest is None or num>second_largest:
+        second_largest=num
 
 
+print(second_largest)
+
+#Take 10 numbers and find the second smallest number.
+
+smallest_num=None
+second_smallest=None
+
+for i in range(1,11):
+    num=int(input("enter a number:"))
+    if smallest_num is None or num<smallest_num:
+        second_smallest=smallest_num
+        smallest_num=num
+    elif second_smallest is None or num<second_smallest:
+        second_smallest=num
+    
+
+print(second_smallest)
+
+#Take 10 numbers from the user and count how many numbers are greater than the number entered immediately before them.
+
+previous_num=int(input("enter a number:"))
+
+count=0
+
+for i in range(1,10):
+    num=int(input("enter a number:"))
+    if num>previous_num:
+        count+=1
+    previous_num=num
+print(count)
+
+#Take 10 numbers and find the largest number AND how many times it occurs.
+
+largest_num=None
+count=0
+
+for i in range(1,11):
+    num=int(input("enter a number:"))
+    if largest_num is None or num>largest_num:
+        largest_num=num
+        count=1
+    elif num==largest_num:
+        count+=1
+print(largest_num)
+print(count)
+
+#Take 10 numbers and find the smallest number AND how many times it occurs.
+
+smallest_num = None
+count=0
+
+for i in range(1,11):
+    num=int(input("enter a number:"))
+    if smallest_num is None or num<smallest_num:
+        smallest_num=num
+        count=1
+    elif num==smallest_num:
+        count+=1
+print(smallest_num)
+print(count)
+
+#take 10 numbers and find the largest EVEN number and how many times it occurs.
+
+smallest_odd=None
+count=0
+
+for i in range(1,11):
+    num=int(input("enter a number:"))
+    if num%2!=0:
+        if smallest_odd is None or num<smallest_odd:
+            smallest_odd=num
+            count=1
+        elif num==smallest_odd:
+           count+=1
+print(smallest_odd)
+print(count)
+
+#Take 10 numbers and count how many numbers are greater than the average of all 10 numbers.
 
 
+numbers=[]
+total=0
+count=0
 
+for i in range(1,11):
+    num=int(input("enter a number:"))
+    numbers.append(num)
+    total+=num
+avg=total/10
 
+for num in numbers:
+    if num>avg:
+        count+=1
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(avg)
+print(count)
 
 
 
