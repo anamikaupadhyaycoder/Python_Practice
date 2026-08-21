@@ -62,7 +62,7 @@ a = float("2")
 b = 4.25
 print(type(a))
 print(a + b) 
-a = 3.14 31
+a = 3.1431
 a = str("3.14")
 print(type(a))
 
