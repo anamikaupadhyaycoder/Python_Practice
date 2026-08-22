@@ -1,57 +1,161 @@
-#7. Iterate over a list of names and print a greeting for each.
-fruits=["apple", "mango", "litchi", "kiwi"]
+#while loops
+#1. Print numbers from $1$ to $10$ using a while loop.
+i=1
 
-for i in range(1,4):
-    print(fruits)
-
-#8. Print numbers from $10$ down to $1$ using a for loop and range().
-for i in range(10, 0, -1):
+while i<=10:
     print(i)
+    i+=1
 
-#9. Print the squares of all numbers from $1$ to $10$.
-for i in range(1,11):
-    print(f"{i} =", i**2)
+#2. Print numbers from $10$ down to $1$ using a while loop.
 
-#10. Count the total number of vowels in a string using a loop.
-string = "developer".lower()
+i=10
+
+while i>=1:
+    print(i)
+    i-=1
+
+#3. Keep asking the user for input until they type "exit".
+
+while True:
+    user = input("enter a input:")
+    if user.lower() == "exit":
+        print("Goodbye")
+        break
+
+#4. Keep adding user inputs to a sum until the user enters $0$.
+total=0
+
+while True:
+    user=int(input("Enter a number:"))
+    if user==0:
+        print(total)
+        print("exit")
+        break
+    total+=user
+
+#5. (Number Guessing): Let a user guess a secret number until they get it correct.
+secret_num=25
+
+while True:
+    user=int(input("enter a number:"))
+    if user==secret_num:
+        print("you have guessed the number.")
+        break
+    
+#6. Find the sum of digits of a given integer using a while loop.
+num=int(input("enter a number:"))
+
+total=0
+
+while num>0:
+    digit=num%10
+    total+=digit
+    num//=10
+print(total)
+
+#7. Reverse a given integer using arithmetic operations in a while loop.
+
+num=int(input("Enter a number:"))
+
+reverse=0
+
+while num>0:
+    digit=num%10
+    reverse=reverse*10+digit
+    num//=10
+print(reverse)
+
+#8. Print the first $N$ terms of the Fibonacci sequence using a loop.
+n=int(input("enter a number:"))
+
+a=0
+b=1
+while a<=n:
+    a,b=b,a+b
+    print(a)
+
+#9. count the number of digits in an integer by repeatedly dividing by 10 in a loop.
+
+num=int(input("enter a number:"))
 
 count=0
-vowels="aeious"
-for ch in string:
-    if ch in vowels:
-        count+=1
+
+while num>0:
+    digit=num%10
+    count+=1
+    num//=10
 print(count)
 
-#11. Calculate the product of all numbers in a list.
-lis = [1, 4, 3, 6]
+#10. Find the factorial of a number using a while loop.
 
-product=1
-for num in lis:
-    product*=num
-print(product)
+num=int(input('enter a number:'))
+fact=1
+i=1
 
-#12. Print a horizontal row of 10 asterisks (*) using a loop.
+while i<=num:
+    fact*=i
+    i+=1
+print(fact)
 
-for i in range(1,11):
-    print("*", end=" ")
+#11. Write a program that acts like a simple ATM, prompting for a PIN until correct.
 
-#13. Print elements of a list along with their index using enumerate().
-lis = ["a", "b", "c", "d"]
+pin_number=1234
 
-for index, item in enumerate(lis):
-    print(index, item)
+while True:
+    pin=int(input("enter a pin number:"))
+    if pin==pin_number:
+        print("Money is withdrawing")
+        break
+    else:
+        print("wrong pin number")
 
-#14. Print all numbers between $100$ and $200$ that are divisible by $7$.
-for i in range(100,201):
-    if i%7==0:
-        print(i)
+#12. Find the greatest common divisor (GCD) of two numbers using a loop.
 
-#15. Print the elements of a tuple in reverse order using a loop.
+num1=int(input("enter a number:"))
+num2=int(input("enter a number:"))
 
-tup=(3, 5, 6, 8)
+HCF=0
 
-for item in reversed(tup):
-    print(item)
+i=1
+while i<=min(num1,num2)+1:
+    if num1%i==0 and num2%i==0:
+        HCF=i
+    i+=1
+print(HCF)
 
+#13. Print a series where each term is double the previous term ($1, 2, 4, 8, \dots$) up to $100$.
+i=1
 
+while i<=100:
+    print(i, end=" ")
+    i=i*2
+
+#14. implement a countdown timer that prints numbers from $5$ down to $1$ with a delay.
+import time
+
+num=5
+
+while num>=1:
+    print(num)
+    time.sleep(1)
+    num-=1
+
+#15. Keep shifting elements of a list to the left using a loop.
+numbers = [1, 2, 3, 4, 5]
+
+count = 0
+
+while count < len(numbers):
+    first = numbers[0]
+
+    j = 0
+    while j < len(numbers) - 1:
+        numbers[j] = numbers[j + 1]
+        j += 1
+
+    numbers[-1] = first
+
+    print(numbers)
+
+    count += 1
 
