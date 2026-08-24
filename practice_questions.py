@@ -1,135 +1,4 @@
-#while loops
-#1. Print numbers from $1$ to $10$ using a while loop.
-i=1
-
-while i<=10:
-    print(i)
-    i+=1
-
-#2. Print numbers from $10$ down to $1$ using a while loop.
-
-i=10
-
-while i>=1:
-    print(i)
-    i-=1
-
-#3. Keep asking the user for input until they type "exit".
-
-while True:
-    user = input("enter a input:")
-    if user.lower() == "exit":
-        print("Goodbye")
-        break
-
-#4. Keep adding user inputs to a sum until the user enters $0$.
-total=0
-
-while True:
-    user=int(input("Enter a number:"))
-    if user==0:
-        print(total)
-        print("exit")
-        break
-    total+=user
-
-#5. (Number Guessing): Let a user guess a secret number until they get it correct.
-secret_num=25
-
-while True:
-    user=int(input("enter a number:"))
-    if user==secret_num:
-        print("you have guessed the number.")
-        break
-    
-#6. Find the sum of digits of a given integer using a while loop.
-num=int(input("enter a number:"))
-
-total=0
-
-while num>0:
-    digit=num%10
-    total+=digit
-    num//=10
-print(total)
-
-#7. Reverse a given integer using arithmetic operations in a while loop.
-
-num=int(input("Enter a number:"))
-
-reverse=0
-
-while num>0:
-    digit=num%10
-    reverse=reverse*10+digit
-    num//=10
-print(reverse)
-
-#8. Print the first $N$ terms of the Fibonacci sequence using a loop.
-n=int(input("enter a number:"))
-
-a=0
-b=1
-while a<=n:
-    a,b=b,a+b
-    print(a)
-
-#9. count the number of digits in an integer by repeatedly dividing by 10 in a loop.
-
-num=int(input("enter a number:"))
-
-count=0
-
-while num>0:
-    digit=num%10
-    count+=1
-    num//=10
-print(count)
-
-#10. Find the factorial of a number using a while loop.
-
-num=int(input('enter a number:'))
-fact=1
-i=1
-
-while i<=num:
-    fact*=i
-    i+=1
-print(fact)
-
-#11. Write a program that acts like a simple ATM, prompting for a PIN until correct.
-
-pin_number=1234
-
-while True:
-    pin=int(input("enter a pin number:"))
-    if pin==pin_number:
-        print("Money is withdrawing")
-        break
-    else:
-        print("wrong pin number")
-
-#12. Find the greatest common divisor (GCD) of two numbers using a loop.
-
-num1=int(input("enter a number:"))
-num2=int(input("enter a number:"))
-
-HCF=0
-
-i=1
-while i<=min(num1,num2)+1:
-    if num1%i==0 and num2%i==0:
-        HCF=i
-    i+=1
-print(HCF)
-
-#13. Print a series where each term is double the previous term ($1, 2, 4, 8, \dots$) up to $100$.
-i=1
-
-while i<=100:
-    print(i, end=" ")
-    i=i*2
-
+#While loops
 #14. implement a countdown timer that prints numbers from $5$ down to $1$ with a delay.
 import time
 
@@ -159,3 +28,89 @@ while count < len(numbers):
 
     count += 1
 
+#Nested Loops & Flow Control (Q231-250)
+#1. Use a for loop with break to stop printing numbers when encountering $5$.
+for i in range(1,6):
+    if i==5:
+        break
+    print(i)
+
+#2. Use continue to print numbers $1$ to $10$ except the number $7$.
+for i in range(1,11):
+    if i==7:
+        continue
+    print(i)
+
+#3. Print a $3 times 3$ grid of asterisks (*) using nested loops.
+for i in range(3):
+    for j in range(3):
+        print("*", end=" ")
+    print()
+
+#4. Print a right-angled triangle pattern of stars:text * ** ***
+for i in range(3):
+    for j in range(i):
+        print("", end="")
+    for j in range(i+1):
+        print("*", end=" ")
+    print()
+
+#5. Print an inverted right-angled triangle pattern of stars.
+for i in range(3):
+    for j in range(i):
+        print("", end="")
+    for j in range(3-i):
+        print("*", end=" ")
+    print()
+
+#6. Print a centered pyramid pattern of stars.
+for i in range(5):
+    for j in range(4-i):
+        print(" ", end="")
+    for j in range(i+1):
+        print("*", end=" ")
+    print()
+
+#7. Print the multiplication tables from $1$ to $5$ using nested loops.
+for i in range(1,6):
+    for j in range(1,11):
+        print(f"{i}*{j}=", i*j)
+    print()
+
+#8. Find all prime numbers between $2$ and $50$ using nested loops.
+for num in range(2,51):
+    count=0
+    for i in range(1,num+1):
+        if num%i==0:
+            count+=1
+
+    if count==2:
+        print(i, end=" ")
+
+#Create a $2 text{D}$ matrix (list of lists) and print it row by row.
+matrix=[
+[2,3,4],
+[1,5,8],
+[7,2,1]
+]
+for row in matrix:
+        print(row)
+
+#Transpose a 2*3 matrix into a 3*2 matrix using loops.
+matrix_a=[
+    [2,2,4],
+    [1,5,7]
+]
+
+transpose=[
+    [0,0],
+    [0,0],
+    [0,0]
+]
+
+for i in range(2):
+    for j in range(3):
+        transpose[j][i]=matrix_a[i][j]
+
+for row in transpose:
+    print(row)
