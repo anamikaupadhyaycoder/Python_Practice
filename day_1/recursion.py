@@ -1,5 +1,5 @@
 #function 
-'''def greet(name):
+def greet(name):
     print("hello", name)
 
 greet("Aayushi")
@@ -47,9 +47,9 @@ print(check)
 
 #6. Create a function called largest that takes three numbers:and returns the largest number.
 def largest(a, b, c):
-    if a>b and a>c:
+    if a>=b and a>=c:
         return a
-    elif b>a and b>c:
+    elif b>=a and b>=c:
         return b
     else:
         return c
@@ -148,7 +148,7 @@ t=largest(10,25,15)
 print(t)
 
 p=largest(50,12,80,35)
-print(p)'''
+print(p)
 
 #def count_even(*args):It should count how many even numbers were given.count_even(10, 15, 20, 25, 30)
 def count_even(*args):
@@ -162,3 +162,98 @@ def count_even(*args):
 
 c = count_even(2, 5, 9, 8, 9, 4)
 print(c)
+
+#26-8-2026
+#def student_info(**kwargs):Inside the function, simply print kwargs.student_info(name="Aayushi", age=18, course="Python")
+def student_info(**kwargs):
+    print(kwargs)
+
+student_info(name="Aayushi", age=18, course="python")
+
+#def show_info(**kwargs):Inside the function, use a for loop to print each key and value like:name : Aayushi age : 18 course : Python
+def show_info(**kwargs):
+    for key,value in kwargs.items():
+        print(key, ":", value)
+
+show_info(name="Aayushi", age=18, course="Python")
+
+#You can use both in the same function:def show(*args, **kwargs):print(args) print(kwargs).Now call:show(10, 20, 30, name="Aayushi", age=18)
+def show(name, *args, **kwargs):
+    print(name)
+    print(args)
+    print(kwargs)
+
+show("aayushi", 10, 20, 30, age=18, course="Python")
+
+#
+name="aayushi"
+def greet():
+    name="Aayushi"
+    print(name)
+
+greet()
+print(name)
+
+count = 5
+
+def increase():
+    global count
+    count+=1
+
+increase()
+print(count)
+
+#write a function: def square(n): it should return the square of n. then call it with:square(5)
+def square(n):
+    return n**2
+
+s=square(5)
+print(s)
+
+#write a function:def power(n, exponent=2):it should return n raised to exponent. test it with: power(5) and power(5,3)
+def power(n, exponent=2):
+    return n**exponent
+
+s=power(5)
+print(s)
+p=power(5,3)
+print(p)
+
+#write a fucntion:def check_even(n):it should return "even" if n is even. return "odd" is n is odd. 
+def check_even(n):
+    if n%2==0:
+        return "even"
+    else:
+        return "odd"
+
+n = check_even(5)
+print(n)
+
+def largest(a, b, c):
+    if a>=b and a>=c:
+        return a
+    elif b>=a and b>=c:
+        return b 
+    else:
+        return c
+
+n = largest(25, 25, 15)
+print(n)
+
+#write def sum_numbers(*args): it should return the sum of any number of numbers.
+def sum_numbers(*args):
+    add=0
+    for i in args:
+        add+=i
+    return add
+s=sum_numbers(10,20)
+print(s)
+
+#write a function:def get_age(**kwargs): it should return tthe value of "age" form the keyword arguments. 
+def get_age(**kwargs):
+    return kwargs["age"]
+    
+s=get_age(name="aayushi", age=18, i=29)
+print(s)
+
+
