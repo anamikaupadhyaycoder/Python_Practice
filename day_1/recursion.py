@@ -256,4 +256,144 @@ def get_age(**kwargs):
 s=get_age(name="aayushi", age=18, i=29)
 print(s)
 
+#count positive numbers through functions. 
+def count_positive(*args):
+    count=0
+    for i in args:
+        if i>0:
+            count+=1
+    return count
+
+s=count_positive(3, 5, 8, -1, -8, 0)
+print(s)
+
+#
+def calculate_total(price, *discounts, tax=5):
+    for i in discounts:
+        dis=(i/100)*price
+        price=price-dis
+        tax_amount=price*(tax/100)
+        final_total=price+tax_amount
+    return final_total
+
+s=calculate_total(1000, 10, 20)
+print(s)
+
+#
+def student_info(name, age=18, *marks, **details):
+    total=0
+    count=0
+
+    if marks==():
+        return "No marks provided"
+    else:
+        for i in marks:
+            total+=i
+            count+=1
+    avg=total/count
+    return avg
+
+s=student_info("Aayushi", 20, 80, 90, 95, city="Delhi", course="Python")
+print(s)
+
+#
+def calcualte_bill(*prices, discount=0, **customer):
+    total_bill=0
+    for i in prices:
+        total_bill+=i
+
+    dis=total_bill*(discount/100)
+    total_amount=total_bill-dis
+
+    return total_amount
+
+p=calcualte_bill(100,200, discount=5, name="anshika", quantity=2)
+print(p)
+
+#
+def find_largest(*numbers, default=None, **info):
+    largest_num=None
+    if not numbers:
+        return default
+    else:
+        for i in numbers:
+            if largest_num is None or i>largest_num:
+                largest_num=i
+        return largest_num
+    
+p = find_largest(7, 3, 13, 8, 24, name="vansh", occupation="student", age=25)
+print(p)
+
+#
+def calculate_average(*numbers, rounding=2, **info):
+
+    total=0
+    count=0
+
+    if not numbers:
+        return "No numbers"
+
+    for i in numbers:
+        total+=i
+        count+=1
+    avg=total/count
+    round_average=round(avg, rounding)
+    return round_average
+
+p=calculate_average(100, 120, name="anshika", classes=10, occupation="student")
+print(p)
+
+#
+def process_numbers(start, end, step=1, *extra, **info):
+
+    add_range=0
+    add_extra=0
+
+    for i in range(start, end):
+        if i%2==0:
+            add_range+=i
+    
+    for i in extra:
+        if i%2==0:
+            add_extra+=i
+
+    final_sum=add_range+add_extra
+    return final_sum
+
+u=process_numbers(1,10,1,20,25,30,name="Aayushi")
+print(u)
+
+def check_numbers(*numbers, minimum=0, **info):
+    count=0
+
+    for i in numbers:
+        if i>=minimum:
+            count+=1
+    return count
+
+c=check_numbers(5,12,-3,8,20,minimum=10, name="aayushi")
+print(c)
+
+def analyze_numbers(*numbers, threshold=10, **info):
+    largest_num=None
+    smallest_num=None
+    total=0
+    count=0
+    
+    if not numbers:
+        return "No numbers provided"
+    for i in numbers:
+        total+=i
+        if largest_num is None or i>largest_num:
+            largest_num=i
+        if smallest_num is None or i<smallest_num:
+            smallest_num=i
+        if i>=threshold:
+            count+=1
+    return largest_num, smallest_num, total, count
+   
+c=analyze_numbers(5,20,8,15,30,threshold=15, name="Aayushi")
+print(c)
+        
+
 
