@@ -394,6 +394,104 @@ def analyze_numbers(*numbers, threshold=10, **info):
    
 c=analyze_numbers(5,20,8,15,30,threshold=15, name="Aayushi")
 print(c)
+
+
+#27-08-2026
+#Write a function called sum_numbers() that accepts any number of numbers using *args and returns their total.
+def sum_numbers(*numbers):
+    total=0
+    for i in numbers:
+        total+=i
+    return total
+sum=sum_numbers(10, 28, 30)
+print(sum)
+
+#Write a function count_even(*numbers) that accepts any number of numbers and returns how many of them are even.
+count=0
+def count_even(*numbers):
+    
+    for i in numbers:
+        if i%2==0:
+            global count
+            count+=1
+    return count
+count_num=count_even(2, 3, 4 ,5 ,6 ,7, 8)
+print(count_num)
+
+#Write a function called count_digits(n) that uses a while loop to count how many digits are in a number.
+def count_digits(n):
+    count=0
+    while n>0:
+        digits=n%10
+        count+=1
+        n//=10
+    return count
+count_n=count_digits(23458)
+print(count_n)
+
+#write a function called sum_digits(n) that uses a while loop. 
+def sum_digits(n):
+    total=0
+    while n>0:
+        digit=n%10
+        total+=digit
+        n//=10
+    return total
+result=sum_digits(2348)
+print(result)
+
+#write a function called count_odd_digits(n). it should use a while loop and return how many odd digits are present in the number. 
+def count_odd_digits(n):
+    count=0
+    while n>0:
+        digit=n%10
+        if digit%2!=0:
+            count+=1
+        n//=10
+    return count
+result=count_odd_digits(23456)
+print(result)
+
+#write a function called product_digits(n). It should return the product of all digits using a while loop. 
+def prodcut_digits(n):
+    product=1
+    while n>0:
+        digit=n%10
+        product*=digit
+        n//=10
+    return product
+result=prodcut_digits(2345)
+print(result)
+
+#write a function called reverse_number(n). it should use a while loop and return the reversed number. 
+def reverse_number(n):
+    reverse=0
+    while n>0:
+        digit=n%10
+        reverse=reverse*10+digit
+        n//=10
+    return reverse
+result=reverse_number(235)
+print(result)
+
+#write a function called is_palindrome(n). it should return True if the number is a palindrome number and false otherwise.
+def is_palindrome(n):
+    original_num=n
+    reverse=0
+    while n>0:
+        digit=n%10
+        reverse=reverse*10+digit
+        n//=10
+    if reverse==original_num:
+        return True
+    else:
+        return False
+result=is_palindrome(1231)
+print(result)
+
+#write a funciton:sum_even_digits(n). It should use a while loop and return the sum of only the even digits. 
+
+    
         
 
 
