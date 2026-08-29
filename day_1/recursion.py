@@ -489,9 +489,184 @@ def is_palindrome(n):
 result=is_palindrome(1231)
 print(result)
 
-#write a funciton:sum_even_digits(n). It should use a while loop and return the sum of only the even digits. 
+#write a funciton:count_even_digits(n). It should use a while loop and return the count of only the even digits. 
+def count_even_digits(n):
+    count=0
+    while n>0:
+        digits=n%10
+        if digits%2==0:
+            count+=1
+        n//=10
+    return count
+result=count_even_digits(2452315)
+print(result)
 
-    
+#write a function def largest_digit(n): it should return the largest digit in the  number. 
+def smallest_digit(n):
+    smallest_n=None
+    while n>0:
+        digit=n%10
+        if smallest_n is None or digit<smallest_n:
+            smallest_n=digit
+        n//=10
+    return smallest_n
+result=smallest_digit(58391)
+print(result)
+
+#write a function def last_digit(n): it should return the last digit of the number.
+def last_digit(n):
+   return n%10
+
+result=last_digit(4278)
+print(result)
+
+#write a function called def sum_first_last(n): it should reutrn the sum of the first and last digits. 
+def sum_first_last(n):
+    last=n%10
+    while n>=10:
+        n//=10
+    return n+last
+result=sum_first_last(4382)
+print(result)
+
+#write a function calles def count_vowels(text): It should count how many vowels(a,e,i,o,u)are present in a string.
+def count_vowels(text):
+    count=0
+    vowels="aeiouAEIOU"
+    for char in text:
+        if char in vowels:
+            count+=1
+        
+    return count
+result=count_vowels("hello")
+print(result)
+
+#write def ocunt_consonants(text):it should return the number of consonant letters in the string. 
+def count_consonants(text):
+    count=0
+    vowels="aeiouAEIOU"
+    for char in text:
+        if char.isalpha() and char not in vowels:
+            count+=1
+    return count
+result=count_consonants("hello 123")
+print(result)
+
+#write def count_digits(text): It should count how many numeric digits(0-9)appear in a string. 
+def count_digits(text):
+    count=0
+    for char in text:
+        if char.isdigit():
+            count+=1
+    return count
+result=count_digits("hwll 4123")
+print(result)
+
+#write def count_words(text):It should return the number of words in a sentecne.
+def count_words(text):
+    count=0
+    for char in text:
+        if char in " ":
+            count+=1
+    return count+1
+result=count_words("I love python")
+print(result)
+
+#write a function def reverse_string(text):It should return the string in a reverse order. 
+def reverse_string(text):
+    reverse= ""
+    for char in text:
+        reverse=char+reverse
+    return reverse
+result=reverse_string("hello")
+print(result)
+
+
+#write a function def count_words(text):It should count how many words are in a sentence using a loop. 
+def count_words(text):
+    count=0
+    for char in text:
+        if char in "":
+            count+=1
+    return count+1
+result=count_words("i love python very much")
+print(result)
+
+#write a function def count_vowels(text):
+def count_vowels(text):
+    count=0
+    vowels="aeiouAEIOU"
+    for char in text:
+        if char in vowels:
+            count+=1
+    return count
+result=count_vowels("I love python")
+print(result)
+
+#write a function def count_consonants(text): count all consonant letters. 
+def count_consonants(text):
+    count=0
+    vowels="aeiouAEIOU"
+    for char in text:
+        if char.isalpha() and  char not in vowels:
+            count+=1
+    return count
+result=count_consonants("I love python")
+print(result)
+
+#write a function to count digits in a string . 
+def count_digit(text):
+    count=0
+    for char in text:
+        if char.isdigit():
+            count+=1
+    return count
+result=count_digit("Python123")
+print(result)
+
+#write a function def count_special(text): It should count special characters.
+def count_special(text):
+    count=0
+    for char in text:
+        if not char.isalpha() and not char.isdigit():
+            count+=1
+    return count
+result=count_special("Python@123!")
+print(result)
+
+#write a function def upper_lower(text):it should count uppercase and lowercase.
+def upper_lower_case(text):
+    upper_count=0
+    lower_count=0
+    for char in text:
+        if char.isupper():
+            upper_count+=1
+        if char.islower():
+            lower_count+=1
+    return upper_count, lower_count
+result=upper_lower_case("PyTHon")
+print(result)
+
+#write a fucntion called def count_character(text, target): It should count characters in sentence. 
+def count_character(text, target):
+    count=0
+    for char in text:
+        if char == target:
+            count+=1
+    return count
+result=count_character("banana", "b")
+print(result)
+
+#write a function def count_character(text, target):It should count the target character regardless of uppercase/lowercase. 
+def count_character(text, target):
+    count=0
+    for char in text:
+        if char.lower() == target.lower():
+            count+=1
+    return count
+result=count_character("banAna", "a")
+print(result)
+
         
 
 
