@@ -1,49 +1,9 @@
 #function 
-def greet(name):
+'''def greet(name):
     print("hello", name)
 
 greet("Aayushi")
 greet("Isha")
-
-#1. Write a function called square that takes a number and prints its square.
-def square(a):
-    return a**2
-
-r = square(2)
-print(r)
-
-#2. Create a function called add that:takes two numbers, adds them, returns the result. Then call it with 10 and 20 and print the result.
-def add(a, b):
-    add = a+b
-    print(add)
-    return add
-
-add(10,20)
-
-#3. Write a function called multiply that:Takes two numbers a and b, Multiplies them, Returns the result, Outside the function, store the returned result in a variable called result, Print result. 
-def multiply(a,b):
-    multiply=a*b
-    return multiply
-
-result=multiply(6,7)
-print(result)
-
-#4. Write a function called greet that takes one parameter called name and prints:
-def greet(name):
-    return "aayushi"
-
-n = greet("a")
-print(n)
-
-#5. Write a function:take a number n, if the number is even, return "Even", otherwise, return "Odd".
-def check_even(n):
-    if n%2==0:
-        return "even"
-    else:
-        return "odd"
-
-check = check_even(7)
-print(check)
 
 #6. Create a function called largest that takes three numbers:and returns the largest number.
 def largest(a, b, c):
@@ -57,13 +17,6 @@ def largest(a, b, c):
 l = largest(20, 25, 15)
 print(l)
 #25-08-2026
-
-#1. Write a function called welcome that:takes name as a parameter, has "Guest" as the default value, prints Welcome followed by the name. 
-def welcome(name="Guest"):
-    print("Welcome", name)
-
-welcome()
-welcome("Aayushi")
 
 #def calculate(a, b=10):The function should add a and b and print the result.Then call it:calculate(5), calculate(5, 20).
 def calculate(a, b=10):
@@ -469,7 +422,7 @@ def reverse_number(n):
     while n>0:
         digit=n%10
         reverse=reverse*10+digit
-        n//=10
+        n//=10 
     return reverse
 result=reverse_number(235)
 print(result)
@@ -666,6 +619,135 @@ def count_character(text, target):
     return count
 result=count_character("banAna", "a")
 print(result)
+
+#30-08-2026
+#write a function called count_vowels(text) that counts how many vowels are present in a sting. 
+def count_vowels(text):
+    count=0
+    vowels="aeiouAEIOU"
+    for char in text:
+        if char in vowels:
+            count+=1
+    return count
+result=count_vowels("PyThOn")
+print(result)
+
+#write a function def count_consonants(text): It should count the number of consonant letters in a string. 
+def count_consonants(text):
+    count=0
+    vowels="aeiouAEIOU"
+    for char in text:
+        if char.isalpha() and char not in vowels:
+            count+=1
+    return count
+result=count_consonants("Python")
+print(result)
+
+#write a function def reverse_string(text):Return the string in reverse order. 
+def reverse_string(text):
+    reverse= ""
+    for char in text:
+        reverse = char+reverse
+    return reverse
+result=reverse_string("Hello")
+print(result)
+
+#write a function: def is_palindrome(text): it should check whether a string reads the same forward and backward. 
+def is_palindrome(text):
+    orignial=text
+    reverse=""
+    for char in text:
+        reverse=char+reverse
+    if reverse==orignial:
+        return  True 
+    else:
+        return False
+
+result=is_palindrome("hello")
+print(result)
+
+#write a function def count_words(text):Count the number of words in a sentence using a loop. 
+def count_words(text):
+    count=0
+    for char in text:
+        if char in " ":
+            count+=1
+    return count+1
+result=count_words("I love python")
+print(result)
+
+#write a function def remover_spaces(text):Return the string after removing all spaces. 
+def remover_spaces(text):
+    empty_string=""
+    for char in text:
+        if char !=" ":
+            empty_string=empty_string+char
+    return empty_string
+result=remover_spaces("I love python")
+print(result)
+
+#write a function that counts upper and lower character. 
+def upper_lower(text):
+    count_upper=0
+    count_lower=0
+    for char in text:
+        if char.isupper():
+            count_upper+=1
+        if char.islower():
+            count_lower+=1
+    return count_upper, count_lower
+result=upper_lower("PyThOn")
+print(result)
+
+def remove_vowels(text):
+    vowels="AEIOUaeiou"
+    remove= ""
+    for char in text:
+        if char not in  vowels:
+            remove=remove+char
+    return remove
+result=remove_vowels("Hello World")
+print(result)
+
+#write a function def remove_duplicates(text):it should remove duplicates. 
+def remove_duplicates(text):
+    remove= ""
+    for char in text:
+        if char not in remove: 
+            remove=remove+char
+    return remove
+result=remove_duplicates("Programming")
+print(result)'''
+
+#Find the most frequent character in a string.
+def most_frequent(text):
+    most_char = ""
+    highest=0
+
+    for char in text:
+        count=0
+
+        for x in text:
+            if x==char:
+                count+=1
+        if count>highest:
+            highest=count
+            most_char=char
+
+    return most_char
+result=most_frequent("hello")
+print(result)
+    
+
+
+    
+
+
+
+
+
+
+    
 
         
 
