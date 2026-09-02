@@ -157,7 +157,7 @@ print(result)
 from functools import reduce
 numbers=[2,3,4,5]
 result=reduce(lambda a,b: a*b, numbers)
-print(result)'''
+print(result)
 
 #use reduce()+lambda to find the largest number. 
 from functools import reduce
@@ -165,6 +165,27 @@ numbers=[10,20,30,40]
 result=reduce(lambda a,b: a if a>b else b, numbers)
 print(result)
 
+#question 1-use map()+lambda to divide every number by 2. 
+numbers=[2,4,6,8,10]
+result=list(map(lambda n: n/2,numbers))
+print(result)
+
+#Question 2-use filter()+lambda to keep only numbers that are: greater than 20 and even. 
+numbers=[5,12,18,21,30,35,42]
+reuslt=list(filter(lambda n:n%2==0 and n>20,numbers ))
+print(reuslt)
+
+#Question 3-use reduce()+lambda to find the sum of all numbers. 
+from functools import reduce
+numbers=[5,10,15,20]
+result=reduce(lambda a,b:a+b, numbers)
+print(result)'''
+
+#Question 4-use filter() to keep only numbers divisible by 3 and greater than 10. use map() to multiply those numbers by 2. 
+
+numbres=[3,6,9,12,15,18,21]
+result=list(map(lambda n:n*2, filter(lambda n: n%3==0 and n>10, numbres)))
+print(result)
     
 
 
