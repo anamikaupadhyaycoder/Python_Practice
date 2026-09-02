@@ -98,15 +98,72 @@ print(result)
 #Lambda functions:
 #1
 cube=lambda n: n**3
-print(cube(3))'''
+print(cube(3))
 #2. create a lambda that adds two numbers. 
 total=lambda a, b:a+b
 print(total(10,20))
 
+#02-09-2026
+#write a lambda function for larger number. 
+larger=lambda a, b: a if a>b else b
+print(larger(10,15))
 
+#write a lambda function called check_number: for positive and negative or zero.
+check_number=lambda n: "positive" if n>0 else "negative" if n<0 else "zero"
+print(check_number(8))
 
+#we want to crete a new list containing the squares.
+numbers=[1,2,3,4,5]
+result=list(map(lambda n:n**2, numbers))
+print(result)
 
+#use map() + lambda to add 5 to every numbers. 
+numbers=[10,20,30,40,50]
+result=list(map(lambda n: n+5, numbers))
+print(result)
 
+#use map()+lambda to turn every number into :"even" if it's even and "odd" if it's odd. 
+numbers=[1,2,3,4,5,6]
+result=list(map(lambda n:"Even" if n%2==0 else "odd", numbers))
+print(result)
+
+#use map()+lambda to produce:even number, square and odd number, cube
+numbers=[1,2,3,4,5,6,7,8]
+result=list(map(lambda n: n**2 if n%2==0 else n**3,numbers))
+print(result)
+
+#use filter()+lambda to get only the numbers that are greater than 30. 
+numbers=[10,15,22,31,40,53,60]
+result=list(filter(lambda n: n>30, numbers))
+print(result)
+
+#use filter()+lambda to keep only numbers that are: even and greater than 10. 
+numbers=[3,7,12,15,20,27,30,41]
+result=list(filter(lambda n: n%2==0 and n>10, numbers))
+print(result)
+
+#use filter()+lambda to keep numbers that are:divisible by 5 or divisible by 3. 
+numbers=[5,12,20,25,30,33,40,45]
+result=list(filter(lambda n:n%5==0 or n%3==0, numbers))
+print(result)
+
+#first keep only the even numbers, then square them. 
+numbers=[1,2,3,4,5,6,7,8,9,10]
+result=list(map(lambda n:n**2, filter(lambda n:n%2==0, numbers)))
+
+print(result)
+
+#use reduce()+lambda to multiply all the numbers together. 
+from functools import reduce
+numbers=[2,3,4,5]
+result=reduce(lambda a,b: a*b, numbers)
+print(result)'''
+
+#use reduce()+lambda to find the largest number. 
+from functools import reduce
+numbers=[10,20,30,40]
+result=reduce(lambda a,b: a if a>b else b, numbers)
+print(result)
 
     
 
