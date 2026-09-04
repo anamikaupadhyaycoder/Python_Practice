@@ -185,26 +185,260 @@ print(result)
 
 numbres=[3,6,9,12,15,18,21]
 result=list(map(lambda n:n*2, filter(lambda n: n%3==0 and n>10, numbres)))
-print(result)'''
+print(result)
 
 #Question 5-
 from functools import reduce
 numbers=[1,2,3,4,5,6,7,8]
 result=reduce(lambda a,b:a+b, map(lambda n:n**2, filter(lambda n:n%2==0, numbers)))
+print(result)'''
+
+
+#3-9-2026
+#
+'''def tuple_stats(numbers):
+    total=0
+    largest_num=None
+    smallest_num=None
+    for num in numbers:
+        total+=num
+        if largest_num is None or num>largest_num:
+            largest_num=num
+        if smallest_num is None or num<smallest_num:
+            smallest_num=num
+    return largest_num, smallest_num, total
+result=tuple_stats((12,5,8,20,3))
 print(result)
 
+#
+def count_even_odd(numbers):
+    count_even=0
+    count_odd=0
+    for num in numbers:
+        if num%2==0:
+            count_even+=1
+        else:
+            count_odd+=1
+    return count_even, count_odd
+result=count_even_odd((4,7,10,13,20,21))
+print(result)
 
+#
+def analyze_text(text):
+    count_upper=0
+    count_lower=0
+    count_digit=0
 
+    for char in text:
 
+        if char.isupper():
+            count_upper+=1
+        elif char.islower():
+            count_lower+=1
+        elif char.isdigit():
+            count_digit+=1
+            
+    return  count_upper, count_lower, count_digit
+result=analyze_text(("PyThOn123"))
+print(result)
 
+def number_analysis(numbers):
+    sum_even=0
+    sum_odd=0
+    largest_even=None
+    for num in numbers:
+        if num%2==0:
+            sum_even+=num
+        elif num%2!=0:
+            sum_odd+=num
+        if num%2==0:
+            if largest_even is None or num>largest_even:
+                largest_even=num
+    return sum_even, sum_odd, largest_even
+result=number_analysis((12,5,8,15,20,7,30))
+print(result)
 
+#
+def analyze_numbers(numbers):
+    postitive_count=0
+    negative_count=0
+    zero_count=0
+    positive_sum=0
+    for num in numbers:
+        if num>0:
+            postitive_count+=1
+        elif num<0:
+            negative_count+=1
+        else:
+            zero_count+=1
+        if num>0:
+            positive_sum+=num
+    return postitive_count, negative_count, zero_count, positive_sum
+result=analyze_numbers((12,-5,8,-10,15,0,7,-3))
+print(result)
+
+#
+def filter_numbers(numbers):
+    even_numbers=[]
+    number_greater_15=[]
+    for num in numbers:
+        if num%2==0:
+            even_numbers.append(num)
+        if num>15:
+            number_greater_15.append(num)
+       
+    return tuple(even_numbers), tuple(number_greater_15)
+result=filter_numbers((4,15,8,21,10,33,6,17))
+print(result)
+
+#
+def analyze_words(words):
+    num_words=len(words)
+    num_words_more_than_4=0
+    num_uppercase=0
+    longest_word=None
+    for char in words:
+       
+        if len(char)>4:
+            num_words_more_than_4+=1
+
+        if char.isupper():
+            num_uppercase+=1
+
+        if longest_word is None or len(char)>len(longest_word):
+            longest_word=char
+
+    return num_words, num_words_more_than_4, num_uppercase, longest_word
+result=analyze_words(("python", "JAVA", "Code", "developer", "AI"))
+print(result)
+
+#
+def porcess_tuple(numbers):
+    even_list=[]
+    greater_than_8=[]
+    total=0
+    for num  in numbers:
+        total+=num
+        if num%2==0:
+            even_list.append(num)
+        if num>8:
+            greater_than_8.append(num)
+    return total, tuple(even_list), tuple(greater_than_8)
+result=porcess_tuple((4,7,2,9,12,15,6))
+print(result)
+
+#
+
+def modify_tuple(numbers):
+    seen=[]
+    unique=[]
+    duplicates=[]
+    duplicate_count=0
+    for num in numbers:
+        if num not in seen:
+            seen.append(num)
+            unique.append(num)
+        else:
+            duplicate_count+=1
+
+            if num not in duplicates:
+                duplicates.append(num)
+               
+    return tuple(unique), tuple(duplicates), duplicate_count
+result=modify_tuple((3,8,3,12,5,8,15,3))
+print(result)
+
+#remove duplicate characters
+
+def remove_duplicats(text):
+    seen=[]
     
+    for char in text:
+        if char not in seen:
+            seen.append(char)
+       
+    return "".join(seen)
+result=remove_duplicats("programming")
+print(result)
 
-        
+#
+def separate_characters(text):
+    only_letters=""
+    only_digits=""
+    for char in text:
+        if char.isdigit():
+            only_digits+=char
+        else:
+            only_letters+=char
+    return only_letters, only_digits
+results=separate_characters("PyThOn123")
+print(results)
 
+#
+def process_words(words):
+    upper_more_3=[]
+    lower_less_3=[]
+    for char in words:
+        if len(char)>3:
+            upper_more_3.append(char.upper())
+        if len(char)<=3:
+            lower_less_3.append(char.lower())
+    return upper_more_3, lower_less_3
+result=process_words(["python", "JAVA", "code", "AI", "developer"])
+print(result)
 
+#
+def word_lenghts(words):
+    empty_list=[]
 
+    for char in words:
+        w=len(char)
+        empty_list.append(w)
+    return empty_list
+result=word_lenghts(["cat", "python", "AI", "developer"])
+print(result)
 
+#
+def find_words(words, target):
+    empty_list=[]
+    for index,item in enumerate(words):
+        if item==target:
+            empty_list.append(index)
+    return empty_list
+result=find_words(["python", "java", "javascript", "html", "python"], "html")
+print(result)
+
+#
+def categorize_words(words):
+    words_5=[]
+    words_3_to_5=[]
+    words_2=[]
+    for char in words:
+        if len(char)>5:
+            words_5.append(char)
+        elif 3<=len(char)<=5:
+            words_3_to_5.append(char)
+        elif len(char)<=2:
+            words_2.append(char)
+    return words_5, words_3_to_5, words_2
+result=categorize_words(["cat", "elephant", "AI", "python", "sun"])
+print(result)'''
+
+#
+def process_numbers(numbers):
+    sum_3=0
+    sum_5=0
+    count_3_5=0
+    for num in numbers:
+        if num%3==0:
+            sum_3+=num
+        if num%5==0:
+            sum_5+=num
+        if num%3==0 and num%5==0:
+            count_3_5+=1
+    return sum_3, sum_5, count_3_5
+result=process_numbers((4,7,12,15,20,9,30))
+print(result)
     
 
 
