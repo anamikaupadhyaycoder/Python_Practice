@@ -191,12 +191,12 @@ print(result)
 from functools import reduce
 numbers=[1,2,3,4,5,6,7,8]
 result=reduce(lambda a,b:a+b, map(lambda n:n**2, filter(lambda n:n%2==0, numbers)))
-print(result)'''
+print(result)
 
 
 #3-9-2026
 #
-'''def tuple_stats(numbers):
+def tuple_stats(numbers):
     total=0
     largest_num=None
     smallest_num=None
@@ -422,7 +422,7 @@ def categorize_words(words):
             words_2.append(char)
     return words_5, words_3_to_5, words_2
 result=categorize_words(["cat", "elephant", "AI", "python", "sun"])
-print(result)'''
+print(result)
 
 #
 def process_numbers(numbers):
@@ -439,7 +439,194 @@ def process_numbers(numbers):
     return sum_3, sum_5, count_3_5
 result=process_numbers((4,7,12,15,20,9,30))
 print(result)
+
+#5-09-2026
+#
+def analyze_num(numbers):
+    largest_even=None
+    smallest_odd=None
+    count_even=0
+    for num in numbers:
+        if num%2==0 and num>10:
+            count_even+=1
+
+        if num%2==0:
+            if largest_even is None or num>largest_even:
+                largest_even=num
+        elif num%2!=0:
+            if smallest_odd is None or num<smallest_odd:
+                smallest_odd=num
+    return largest_even, smallest_odd, count_even
+result=analyze_num([4,8,29,9,7,10,12,13])
+print(result)
+
+#
+def list_fun(numbers):
+    sum_positive=0
+    sum_negative=0
+    count_0=0
+    for num in numbers:
+        if num>0:
+            sum_positive+=num
+        elif num<0:
+            sum_negative+=num
+        elif num==0:
+            count_0+=1
+    return sum_positive, sum_negative, count_0
+result = list_fun([-3, 8, -1, 8, 0, 2, -4, 0, 5])
+print(result)
+
+#
+def analyze_num(numbers):
+    largest_num=None
+    smallest_num=None
+    total=0
+    count=0
+    avg=0
+    count_average=0
+    for num in numbers:
+        total+=num
+        count+=1
+    avg=total/count
+
+    for num in numbers:
+        if largest_num is None or num>largest_num:
+            largest_num=num
+        if smallest_num is None or num<smallest_num:
+            smallest_num=num
+        if num>avg:
+            count_average+=1
+    return largest_num, smallest_num, avg, count_average
+result=analyze_num([10,20,5,30,15])
+print(result)
+
+#Function calling another function for prime numbers. 
+def is_prime(n):
+    count=0
+    for i in range(1, n+1):
+        if n%i==0:
+            count+=1
+    if count==2:
+        return True
+    else:
+        return False
+
+def analyze_primes(numbers):
+    count=0
+    sum=0
     
+    for num in numbers:
+        if is_prime(num):
+            count+=1
+            sum+=num
+    return count, sum
+
+retrun = analyze_primes([2,4,5,7,8,10,11])
+print(retrun)
+
+#funciton calling another function for even numbers. 
+def is_even(n):
+    if n%2==0:
+        return True
+    else:
+        return False
+
+
+def analyze_numbers(numbers):
+    count_even=0
+    sum_even=0
+    count_odd=0
+
+    for num in numbers:
+        if is_even(num):
+            count_even+=1
+            sum_even+=num
+        else:
+            count_odd+=1
+    return count_even, sum_even, count_odd
+reuslt=analyze_numbers([2, 4, 5, 7, 8, 10, 11])
+print(reuslt)
+
+# 3 functions and one is calling the other two functions. 
+def is_positive(n):
+    if n>0:
+        return True
+    else:
+        return False
+
+def is_even(n):
+    return n%2==0
+
+def analyze_numbers(numbers):
+    count_positive_even=0
+    sum_positive_evn=0
+    count_positive_odd=0
+
+    for num in numbers:
+        if is_positive(num) and is_even(num):
+            count_positive_even+=1
+            sum_positive_evn+=num
+        if is_positive(num) and not is_even(num):
+            count_positive_odd+=1
+    return count_positive_even, sum_positive_evn, count_positive_odd
+result=analyze_numbers([2, -4, 5, 8, -3, 10, 7])
+print(result)
+
+#
+def add(a,b):
+    return a+b
+
+def apply_operation(numbers, operation):
+    empty_list=[]
+    for a,b in numbers:
+        r=operation(a,b)
+        empty_list.append(r)
+    return empty_list
+result=apply_operation([(2,3),(4,5)], add)
+print(result)
+
+#using function as a operator in another function 
+def cube(n):
+    return n**3
+
+def apply_operation(numbers, operation):
+    empty_list=[]
+    for num in numbers:
+        my=operation(num)
+        empty_list.append(my)
+    return empty_list
+result=apply_operation([2,3,4,5], cube)
+print(result)
+
+#let's combine function as an argument+condition. 
+def is_even(n):
+    return n%2==0
+
+def filter_numbers(numbers, condition):
+    empty_list=[]
+    for num in numbers:
+        if condition(num):
+            empty_list.append(num)
+    return empty_list
+result=filter_numbers([1,2,3,4,5,6], is_even)
+print(result)'''
+
+#question 13 
+def is_even(n):
+    return n%2==0
+
+def square(n):
+    return n**2
+
+def filter_and_transform(numbers, condition, operation):
+    empty_list=[]
+    for num in numbers:
+        if condition(num):
+            s=operation(num)
+            empty_list.append(s)
+    return empty_list
+result=filter_and_transform([1,2,3,4,5,6], is_even, square)
+print(result)
 
 
 
