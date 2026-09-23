@@ -54,7 +54,7 @@ def analyze_sentence(text):
             count_i+=1
     return longest_word, count_with_4, count_i
 result=analyze_sentence("Python is powerful and programming is fun")
-print(result)'''
+print(result)
 
 #word-level processing → character-level processing.
 def analyze_text(text):
@@ -70,6 +70,7 @@ def analyze_text(text):
             count_consonants+=1
         if char.isalpha():
             char=char.lower()
+            frequency[char]=frequency.get(char, 0)+1
 
             if char in frequency:
                 frequency[char]+=1
@@ -78,3 +79,67 @@ def analyze_text(text):
     return count_vowels, count_consonants, frequency
 result=analyze_text("Programming is Powerful")
 print(result)
+
+#
+def analyze_sentence(text):
+    words=text.split()
+
+    total=0
+    for word in words:
+        if word.lower().count("a")>=2:
+            total+=1
+    return total
+print(analyze_sentence("apple banana data area python"))
+
+def analyze_sentence(text):
+    words=text.split()
+    result=[]
+
+    for word in words:
+        if len(word)>5 and word[0].lower()==word[-1].lower():
+            result.append(word)
+    return result
+print(analyze_sentence("level Python radar apple civic banana"))
+
+def analyze_text(text):
+    words=text.split()
+    longest=None
+    count_long=0
+    count=0
+
+    for word in words:
+        if len(word)>4:
+            count_long+=1
+        if longest is None or len(word)>len(longest) :
+            longest=word
+        if word.lower().count("a"):
+            count+=1
+    return longest, count_long, count
+print(analyze_text("Pyhton is an amazing programming language")) '''
+
+def analyze_sentence(text):
+    words=text.split()
+    vowels="aeioUAEIOU"
+    vowels_count_2=0
+    word_vowels=None
+    max_vowels=0
+    same_start_end_count=0
+   
+
+    for word in words:
+        vowels_count=0
+
+        for char in word:
+            if char in vowels:
+                vowels_count+=1
+        if vowels_count>=2:
+            vowels_count_2+=1
+        if word_vowels is None or vowels_count>max_vowels:
+            word_vowels=word
+            max_vowels=vowels_count
+        if word[0].lower()==word[-1].lower():
+            same_start_end_count+=1
+    return vowels_count_2, word_vowels, same_start_end_count
+print(analyze_sentence("apple banana level education radar computer"))
+
+
