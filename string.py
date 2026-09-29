@@ -122,7 +122,7 @@ def analyze_words(text):
             highest_vowel_word=word
 
     return longest_palindrome, palindrome_count, highest_vowel_word
-print(analyze_words("apple level banana radar computer civic education"))'''
+print(analyze_words("apple level banana radar computer civic education"))
 
 def analyze_text(text):
     words=text.split()
@@ -150,7 +150,10 @@ def analyze_text(text):
         if word[0]==word[-1]:
             count_same_start_end+=1
     return longest_palindrome, count_2_vowels, count_same_start_end
-print(analyze_text("apple banana level education radar computer civic"))
+print(analyze_text("apple banana level education radar computer civic"))'''
+
+v=set()
+print(type(v))
 
 
 
